@@ -1,0 +1,27 @@
+#footer{
+    margin-top: auto;
+}
+
+.footer--rows{
+    @apply grid grid-cols-2 gap-8;
+    @media (min-width: 600px) {
+        @apply  grid-cols-3 gap-8;
+    }
+    @media (min-width: 900px) {
+        @apply  grid-cols-5;
+    }
+}
+
+.footer--row_headline{
+    @apply mb-4;
+}
+
+.footer--row_links{
+    li{
+        @apply mb-2 text-sm;
+        a{
+            @apply underline;
+        }
+    }
+}
+

@@ -1,0 +1,11 @@
+.popover-content{
+    p{
+        @apply mt-1
+    }
+    .skladem{
+        @apply font-bold text-green-700;
+    }
+    .pripravujeme{
+        @apply font-bold text-yellow-500;
+    }
+}

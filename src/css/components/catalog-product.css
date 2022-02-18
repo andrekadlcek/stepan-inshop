@@ -1,0 +1,133 @@
+
+.product-item-thumb{
+    @apply flex items-center justify-center relative overflow-hidden;
+    
+    
+    height: 270px;
+    
+    @media (max-width : 1400px) {
+        height: 24vw;
+    }
+    @media (max-width : 1000px) {
+        height: 32vw;
+    }
+     @media (max-width : 700px) {
+        height: 250px;
+    }
+
+    /* @media (min-width : 1100px) {
+        height: 300px;
+    }
+    @media (min-width : 1300px) {
+        height: 350px;
+    } */
+
+    img, picture{
+        @apply w-full h-full object-cover transition duration-500 ease-in-out;
+    }
+}
+
+.product-item-cover{
+    @apply relative;
+    &:hover{
+        .product-item-thumb img {
+            transform: scale(1.2);
+        }
+    }
+}
+
+.product-item-details{
+    
+    @apply my-4 px-2;
+    span{
+        @apply text-sm text-gray-400;
+    }
+}
+
+.product-item-buy{
+    @apply px-2 mt-2;
+    @media (max-width: 700px) {
+        @apply flex justify-center;
+    }
+    .btn.md {
+        @media (max-width: 700px) {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 0.6rem;
+            padding-bottom: 0.7rem;
+        }
+    }
+}
+
+.product-item{
+    box-shadow: 2px 5px 10px rgb(0 0 0 / 10%);
+    white-space: normal;
+    @apply flex flex-col h-full bg-white rounded-md py-2 px-2;
+}
+
+.product-item-price{
+    margin-top: auto;
+    @apply text-red font-semibold px-2 flex items-center;
+    .basic_price{
+        @apply ml-2 text-gray-400 line-through font-light;
+
+    }
+}
+
+.main-resposnive-list{
+    @apply bg-white rounded-md;
+}
+
+
+.categories-horizontal{
+    @apply grid grid-cols-1 gap-2 mt-4;
+     @media (min-width: 500px) {
+        @apply grid-cols-2;
+    }
+    @media (min-width: 890px) {
+        @apply grid-cols-4;
+    }
+}
+
+.category-box--name{
+    @apply flex items-center underline;
+}
+
+.category-box a{
+    @apply grid gap-3 p-2 rounded-md h-full;
+    box-shadow: 0 12px 44px 0 rgb(105 88 57 / 10%);
+    background-color: #fff;
+    
+    grid-template-columns: 70px 1fr;
+    img{
+        max-height: 70px;
+    }
+}
+
+.category-box--logo{
+    @apply flex justify-center;
+}
+
+.remove-bookmark{
+    @apply absolute z-10 right-1 top-1;
+    .btn-ghost{
+        @apply flex items-center;
+        background-color:rgb(255 255 255 / 78%);
+    }
+}
+
+.product-item-loyalty{
+    @apply px-2;
+    span{
+        @apply font-semibold;
+    }
+    .loyalty-price{
+        @apply ml-0;
+    }
+    .loyalty-reward{
+        @apply text-sm;
+        span{
+    
+        }
+    }
+}

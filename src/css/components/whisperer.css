@@ -1,0 +1,44 @@
+.inshop-whisperer{
+    margin-top: 40px;
+}
+
+#whispererModal{
+    .mdc-dialog__container{
+        align-items: baseline;
+        margin-top: 180px;
+    }
+}
+.inshop-whisperer-items{
+    overflow-x: scroll;
+    max-height: 400px;
+}
+    
+.inshop-whisperer-items ul{
+    @apply grid gap-2 pt-2;
+}
+
+.inshop-whisperer-item{
+    border-bottom: solid 1px;
+    padding-left: 12px;
+    padding-right: 12px;
+    &:last-child{
+        border-bottom: none;
+    }
+    @apply  border-gray-200 pb-2 hover:bg-gray-100;
+  
+    a{
+        grid-template-columns: 45px 1fr;
+        @apply grid;
+    }
+    
+}
+
+.inshop-whisperer-item--thumb{
+    img{
+        max-width: 100%;
+    }
+}
+
+.inshop-whisperer-item--link{
+     @apply flex items-center h-full pl-2;
+}

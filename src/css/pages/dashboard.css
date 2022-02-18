@@ -1,0 +1,49 @@
+.MobileDesc{
+    @apply block;
+    @media (min-width: 600px) {
+        @apply hidden;
+    }
+}
+
+.white-block{
+    box-shadow: 2px 5px 10px rgb(0 0 0 / 10%);
+    @apply bg-white rounded-md py-4 px-4;
+}
+
+.loyalty-table-cover{
+    overflow: scroll;
+    max-height: 600px;
+    .cf{
+        @apply flex mt-2;
+    }
+    .pagination{
+       
+    }
+}
+
+.is5table{
+    text-align: left;
+    position: relative;
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 1240px;
+    tr{
+          border-bottom: 1px solid #e5e5e5;  
+    }
+    th, td {
+        @apply py-2 px-1;
+    }
+    th {
+        background-color: #f2f5f8;
+        font-weight: 600;
+        position: sticky;
+        top: 0; /* Don't forget this, required for the stickiness */
+    }
+}
+
+.loyalty-preview{
+    @apply my-4;
+    span{
+        @apply font-semibold;
+    }
+}

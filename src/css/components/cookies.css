@@ -1,0 +1,17 @@
+#inshopCookies{
+    .btn{
+        margin-right: 0 !important;
+    }
+    .mdc-dialog .mdc-dialog__content{
+        width: 100% !important;
+    }
+    .mdc-dialog .mdc-dialog__surface{
+        @media (min-width : 592px) {
+            max-width: 670px;
+        }
+    }
+    .cookies-action-button{
+        @apply justify-between;
+    }
+}
+

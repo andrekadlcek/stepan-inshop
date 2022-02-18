@@ -1,0 +1,37 @@
+#watchDogInner{
+    @apply  p-5;
+    padding-top: 0px;
+    width: 320px;
+    @media (min-width : 550px) {
+        @apply w-128;
+    }
+
+    .next-step{
+        @apply flex;
+    }
+    .call2action{
+        @apply ml-auto;
+    }
+    .cancel{
+            padding-top: 14px;
+    }
+    .validateError{
+        @apply text-sm text-red;
+    }
+}
+
+.watchdog-success{
+    @apply mb-6;
+}
+
+.watchdog{
+    @apply ml-8;
+}
+
+#openWatchDog {
+    @apply flex cursor-pointer;
+    color: #2173AD;
+    span{
+        @apply pl-1;
+    }
+}

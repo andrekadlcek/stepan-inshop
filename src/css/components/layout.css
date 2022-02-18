@@ -1,0 +1,40 @@
+html, body {
+    @apply h-full text-gray-800;
+}
+
+body{
+    padding-top: 123px;
+    @apply flex flex-col bg-gray-100;
+}
+
+.xl-container{
+   @apply px-3;
+}
+
+.md-container, .containerV2, #Cart, #InshopCheckout, #DashBoard{
+    margin: 0 auto;
+    max-width: 1400px;
+    @apply px-3 w-full;
+}
+
+.single-page{
+    max-width: 750px;
+}
+
+.form-group{
+    @apply flex flex-col;
+}
+
+.main-bar{
+    @apply pt-3;
+}
+
+.DashBoardTabs{
+    @apply hidden;
+}
+
+#DashBoard{
+    .block-title{
+        @apply mb-4;
+    }
+}

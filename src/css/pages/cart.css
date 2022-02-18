@@ -1,0 +1,242 @@
+.new-cart{
+    @apply rounded-md shadow-xl overflow-hidden mt-4;
+}
+
+.new-cart-item{
+    margin-bottom: 1px;
+    grid-template-columns: 60px 1fr;
+    align-items: center;
+    @apply grid gap-3 bg-white pl-4 py-2;
+    @media (min-width: 760px) {
+        @apply px-4;
+    }
+}
+
+.new-cart-item--thumb{
+    
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.new-cart-item--details{
+    @media (min-width: 760px) {
+        @apply grid;
+        grid-template-columns: 1fr 430px;
+    }
+    
+}
+
+.new-cart-item--count_price{
+    @apply grid;
+    grid-template-columns: 1fr 1fr 50px;
+}
+
+.new-cart-item--prices{
+    @apply grid text-right gap-4;
+    grid-template-columns: 1fr 1fr;
+}
+
+.price-for-required{
+    @apply font-semibold;
+}
+
+.new-cart-item--remove{
+    @apply flex items-center justify-center;
+}
+
+.new-cart-item--price{
+     @apply flex items-center justify-end;
+}
+
+.item--count{
+    border: solid 1px;
+    @apply grid border-gray-400 rounded-md ;
+    width: 88px;
+    grid-template-columns: 1fr 40px 1fr;
+    input{
+        border: none;
+        outline: none;
+        text-align: center;
+        border-right: solid 1px;
+        border-left: solid 1px;
+        height: 100%;
+        @apply border-gray-400 px-0;
+        outline: 0 !important;
+        &:focus {
+           outline: 0 !important; 
+           box-shadow: none;
+           border-color: none;
+        }
+    }
+}
+
+.cart-item-counter--button{
+    @apply h-full flex justify-center items-center cursor-pointer;
+    svg{
+        width: 15px;
+    }
+}
+
+.new-cart--footer{
+    @apply flex items-center bg-white flex-col;
+    @media (min-width: 556px) {
+        @apply  items-center flex-row;
+    }
+       
+}
+
+.new-cart--footer_last{
+    @apply pb-4 pl-4 mt-4;
+    
+    .new-cart--footer--left{
+        @media (max-width: 556px) {
+        @apply my-4;
+    }
+    }
+}
+
+.new-cart--summary_price, .new-cart--summary_cechout{
+    
+
+}
+  
+.new-cart--summary_price{
+    @apply text-right;
+}
+
+.new-cart--summary_cechout{
+
+}
+
+.new-cart--footer--right{
+    
+   @media (min-width: 556px) {
+       @apply ml-auto;
+       padding-right: 48px;
+    }
+    
+    @media (min-width: 760px) {
+       padding-right: 62px;
+    }
+}
+
+.new-cart-item--remove span{
+    @apply cursor-pointer;
+}
+
+.clear-cart{
+    padding-right: 13px;
+    @media (min-width: 760px) {
+          padding-right: 30px;
+    }
+    @apply flex mb-6;
+}
+
+.clear-cart--action{
+    @apply flex ml-auto cursor-pointer;
+    span{
+        padding-right: 12px;
+        font-weight: 700;
+    }
+}
+
+.cart-bs--submit{
+    @apply flex items-center;
+    .form-control{
+        @apply mt-0 mr-1;
+    }
+}
+
+.not-valid{
+    color: red;
+}
+
+.cart-gifts{
+    @apply mt-4;
+}
+
+.cart-gifts--header{
+    @apply text-center;
+}
+
+.gift-items{
+    .product-item{
+        @apply relative;
+    }
+}
+
+.gift-selected{
+    @apply absolute left-0 top-0 w-full h-full z-10 flex items-center justify-center bg-white bg-opacity-60;
+}
+
+.gift-selected--inner{
+    svg {
+        @apply h-16;
+        stroke: #107857;
+    }
+}
+
+.product-item-hover{
+    @apply cursor-pointer;
+}
+
+.gift-range-header{
+    @apply text-center mt-3 mb-2;
+}
+
+.item-gift--icon{
+    padding-left: 29px;
+    svg {
+        @apply h-8;
+    }
+}
+
+.loading-cart-cover{
+    height: 290px;
+    @apply flex justify-center items-center;
+}
+
+.cart-loading-icon{
+    width: 100px;
+    stroke: #3a558c;
+    @apply animate-ping;
+}
+.empty-cart_page-header {
+    @apply p-8;
+    background-color: white;
+}
+.empty_cart_headline {
+    @apply pb-6 border-b-2;
+}
+.empty_cart_text {
+    @apply text-center text-2xl;
+}
+.empty_cart_giftbox {
+    @apply flex items-end gap-4 py-3;
+    img {
+        width: 35px;
+        height: 35px;
+    }
+}
+.empty_cart_buttons {
+    @apply flex justify-between pt-6;
+    a {
+        @apply p-3 text-white text-center;
+        background-color: #FF5858;
+        width: 200px;
+        height: 50px;
+        border-radius: 4px;
+    }
+    a:nth-child(2) {
+        @apply bg-gray-100 text-gray-400 cursor-not-allowed
+    }
+}

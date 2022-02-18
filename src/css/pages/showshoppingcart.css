@@ -1,0 +1,92 @@
+.cart-list{
+    @apply w-full;
+    .form-control{
+        @apply w-12 mr-2;
+    }
+    .product-row{
+        border-bottom: solid 1px;
+        @apply border-gray-200;
+        @media (max-width : 700px) {
+            @apply grid;
+        }
+    }
+    .product-row td{
+        @apply py-4;
+    }
+
+    .table-header{
+        @apply bg-gray-200;
+        @media (max-width: 700px) {
+            @apply hidden;
+        }
+    }
+    .table-header td{
+        @apply py-4;
+    }
+    .table-footer{
+        .table-cells{
+            @media (max-width: 700px) {
+                @apply block;
+                .view-price{
+                    align-items: flex-end;
+                }
+            }
+        }
+        .product-price .table-cells{
+            @media (max-width: 700px) {
+                @apply px-4 py-4;
+            }
+        }
+    }
+    .table-footer.total-price{
+        @apply bg-gray-200;
+        td{
+            @apply py-4;
+        }
+        @media (max-width : 700px) {
+            @apply grid;
+            td{
+                @apply py-0;
+            }
+        }
+    }
+
+    .checkout-button{
+        @apply flex py-4;
+        button {
+            @apply ml-auto;
+        }
+    }
+}
+
+.product-price .table-cells{
+    @apply grid grid-cols-3 gap-4;
+}
+
+.td-label{
+    @apply hidden;
+}
+
+.product-view .table-cells{
+    grid-template-columns: 60px 1fr;
+    @apply grid gap-4;
+    .name{
+        @apply flex items-center;
+    }
+}
+
+.product-price .table-cells{
+    li{
+        @apply flex items-center;
+    }
+    .view-price{
+        @apply flex flex-col justify-center items-baseline;
+    }
+}
+
+.cart-form .nav-buttons{
+    @apply flex py-4;
+    .CartDeleteAll{
+        margin-left: auto;
+    }
+}

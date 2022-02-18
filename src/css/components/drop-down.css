@@ -1,0 +1,6 @@
+.dropdown-menu{
+    @apply bg-white z-50 w-full;
+}
+.show{
+    @apply relative;
+}

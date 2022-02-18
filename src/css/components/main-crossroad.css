@@ -1,0 +1,56 @@
+.main-crossroad{
+    @apply grid grid-cols-2 gap-2 my-9;
+
+    @media (min-width : 800px) {
+        @apply  grid-cols-4;
+    }
+}
+
+
+.main-crossroad-item{
+    grid-template-columns: 30px 1fr;
+    @media (min-width : 460px) {
+        grid-template-columns: 60px 1fr;
+    }
+    @apply grid relative shadow-lg rounded-md py-1;
+    &:after{
+        content: "";
+        height: 2px;
+        transition: width 1s;
+        width: 0;
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        background-color: #f09819;
+    }
+    &:hover{
+        &:after{
+            width: 100%;
+        }     
+        .main-crossroad-item--icon svg{
+            height: 50px;
+        }
+    }
+
+    h4{
+        @media (max-width : 460px) {
+            @apply text-base;
+        }
+    }
+    
+}
+
+.main-crossroad-item--name{
+    @apply flex flex-col justify-center pl-4;
+}
+
+.main-crossroad-item--icon{
+    @apply flex items-center justify-center;
+    svg{
+        height: 30px;
+        @media (min-width : 460px) {
+            height: 42px;
+        }
+        transition: height 0.5s cubic-bezier(0, 1, 0, 1);
+    }
+}

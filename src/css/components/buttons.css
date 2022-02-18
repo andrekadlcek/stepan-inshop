@@ -1,0 +1,29 @@
+.btn{
+    @apply focus:outline-none text-white text-sm py-2.5 px-5 rounded-md  hover:shadow-lg cursor-pointer;
+    background: linear-gradient(272.64deg, #1d3c84 18.29%, #3f5b9c 92.36%);
+    &.cta, &.call2action, &.btn-primary{
+       @apply text-lg font-semibold flex items-center;
+       background: linear-gradient(272.64deg, #FF5858 18.29%, #F09819 92.36%);
+       svg{
+           height: 20px;
+           fill: white;
+           margin-right: 12px;
+       }
+    }
+    &.md{
+      @apply  py-1.5 px-3 text-xs;
+    }
+    &.fob{
+      @apply  py-2.5 px-3 text-sm;
+    }
+    span{
+        flex-grow: 1;
+        text-align: center;
+    }
+}
+
+.btn-ghost{
+     border: 1px solid #ff5858;
+     color:  #ff5858;
+    background: transparent;
+}

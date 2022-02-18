@@ -1,0 +1,222 @@
+#mainHeader{
+    
+    @apply border-gray-700 fixed left-0 top-0 w-full z-30 bg-white;
+}
+
+.main-header{
+    box-shadow: 0 0 10px rgb(0 0 0 / 5%);
+}
+
+.header-blocks{
+    /* grid-template-columns: 70px 90px 1fr 170px 280px;
+    @media (min-width: 1200px) {
+          grid-template-columns: 70px 140px 1fr 280px 280px;
+      }
+    @apply grid gap-4;*/
+    height: 80px; 
+    @apply flex;
+}
+.header-block--logo{
+    @apply flex items-center;
+    img {
+        height: 60px;
+    }
+}
+
+
+.header-block--soc{
+    @apply flex items-center justify-center mx-4;
+    @media (min-width: 620px) {
+        @apply mx-8;
+    }
+    a{
+        @apply mr-2;
+    }
+}
+
+.header-block-search{
+    @apply hidden;
+    @media (min-width: 950px) {
+         @apply   flex items-center pr-4 flex-1;
+    }
+    form{
+        @apply  w-full;
+            & > div{
+            @apply relative w-full flex items-center;
+            border-bottom: 1px solid #e5e5e5;
+            button{
+                @apply w-6 z-10;
+            }
+            input {
+                @apply z-10;
+            }
+        }
+    }
+}
+
+#zpwhisperer{
+    min-height: 40px;
+    width: calc(100% + 20px);
+    margin-left: -10px;
+    z-index: 9;
+    @apply absolute  left-0 top-0 shadow-lg rounded-md bg-white hidden;
+    &.show{
+        @apply block;
+    }
+}
+
+.header__search--input{
+    @apply border-none h-9 pl-0 w-full;
+    box-shadow: none !important;
+}
+
+.header-block-contacts{
+     @apply hidden;
+     @media (min-width: 470px) {
+           @apply flex items-center;
+    }
+    ul{
+      @apply flex flex-col;
+      @media (min-width: 650px) {
+          @apply flex items-center flex-row;
+      }
+      li, a{
+         @apply flex items-center text-xs text-gray-500 ml-3; 
+         img{
+             @apply mr-1;
+         }
+      }  
+    }
+}
+
+.header-block-right{
+    @apply flex items-center justify-around ml-auto;
+    & > div {
+        @apply ml-4;
+        @media (min-width: 620px) {
+            @apply ml-8;
+        }
+    }
+}
+
+.header-block-right--bookmarks{
+    svg{
+        height: 22px;
+        stroke: rgb(1, 73, 131);
+    }
+    &.has-bookmarks {
+        svg{
+            fill: rgb(1, 73, 131);
+        }
+    }
+}
+
+.header-block-right--cart{
+    svg{
+        height: 24px;
+        width: 23px; 
+    }
+}
+
+.header-sub-row{
+
+    height: 44px;
+    border-bottom: 1px solid #E4E4E7;
+    .md-container{
+        @apply flex h-full relative;
+        @media (max-width: 950px) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+.mobile-sub-row--hamburger{
+    @apply pr-2 bg-gray-200;
+    height: 100%;
+}
+
+.mobile-sub-row{
+    @apply flex items-center;
+    flex: 0 0 100%;
+    @media (min-width: 950px) {
+            @apply hidden;
+    }
+}
+
+
+
+#hamburger-dropdown{
+    padding-left: 18px;
+    @apply flex h-full items-center;
+    span{
+        @apply ml-2;
+    }
+}
+
+.nav-icon {
+  width: 30px;
+}
+
+.nav-icon:after, 
+.nav-icon:before, 
+.nav-icon div {
+  @apply bg-gray-700;
+  border-radius: 3px;
+  content: '';
+  display: block;
+  height: 4px;
+  margin: 4px 0;
+  transition: all .2s ease-in-out;
+}
+
+.show-nav .nav-icon:before {
+  transform: translateY(7px) rotate(135deg);
+}
+
+.show-nav .nav-icon:after {
+  transform: translateY(-9px) rotate(-135deg);
+}
+
+.show-nav .nav-icon div {
+  transform: scale(0);
+}
+
+.mobile-sub-row--search{
+    flex-grow: 1;
+    height: 43px;
+    @apply bg-gray-100;
+    form > div {
+        @apply flex;
+    }
+    input{
+        background: transparent;
+        height: 43px;
+        padding-left: 14px;
+        @apply text-xs;
+    }
+    button{
+        height: 43px;
+        width: 43px;
+        img{
+            width: 22px;
+        }
+    }
+}
+
+.header-block-right--cart a{
+    @apply relative block;
+}
+
+.header-block-right--cart_count, .bookmarks-count{
+    width: 17px;
+    height: 17px;
+    @apply absolute text-xs text-white rounded-full bg-orange flex justify-center items-center;
+    right: -10px;
+    top: -3px;
+}
+
+
+.header-block-right--bookmarks a{
+    @apply relative block;
+}

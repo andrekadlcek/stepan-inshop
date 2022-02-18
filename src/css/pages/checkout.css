@@ -1,0 +1,296 @@
+#CheckoutSteps .InSteps{
+    @apply grid grid-cols-3 pt-4 bg-white;
+    & > * {
+        border-bottom: solid 2px;
+        @apply text-center text-base text-gray-400 border-gray-400 pb-4 flex items-center justify-center;
+        @media (min-width: 600px) {
+            @apply text-xl;
+        }
+
+    }
+    .active {
+        @apply text-orange border-orange ;
+    }
+}
+
+#InshopCheckout{
+     .buttons-navigation{
+        @apply flex mt-5;
+        .next-button{
+            @apply ml-auto;
+        }
+    }
+    .show-on-mobile{
+        @apply hidden;
+        @media (max-width: 800px) {
+           @apply flex; 
+        }
+    }
+    .page-header{
+        @apply mb-4;
+    }
+}
+
+.firmBox{
+    @apply hidden;
+}
+
+.InshopCheckout{
+    @apply grid gap-10;
+    @media (min-width: 800px) {
+        grid-template-columns: 1fr 400px;
+    }
+    @media (min-width: 1060px) {
+        grid-template-columns: 1fr 500px;
+    }
+    h2{
+        @apply mb-4;
+    }
+    .select li{
+        @apply mt-2;
+    }
+    .select label{
+        @apply flex items-center;
+        input{
+            @apply mr-2;
+        }
+        &:hover{
+            @apply cursor-pointer;
+        }
+    }
+}
+
+.check-box{
+    @apply mt-4;
+}
+
+.InSteps{
+    @apply rounded-md shadow-xl;
+}
+
+
+
+.checkout-option{
+    @apply mt-4;
+}
+
+.checkout-comment{
+    @apply mt-4;
+}
+
+.summary{
+    @apply rounded-md shadow-xl border-white border-4;
+    .block-title{
+        @apply pt-4;
+    }
+}
+
+.delivery-list{
+    @apply mt-2 mb-4;
+}
+
+.payUcover{
+
+}
+
+.PayUList{
+    li{
+        float: none !important;
+        width: 100% !important;
+        @apply flex items-center;
+        input{
+            @apply mr-2;
+        }
+        img{
+            @apply mr-2;
+        }
+    }
+}
+
+.payucopy{
+    img{
+        @apply hidden;
+    }
+}
+
+.summary{
+    @apply bg-gray-100;
+    .block-title{
+        text-align: center;
+    }
+
+    .prev-inner{
+        grid-template-columns: 1fr 160px;
+        @apply grid gap-6;
+    }
+}
+
+.summary-block{
+    .count{
+        @apply w-8;
+        vertical-align: top;
+        text-align: right;
+        white-space: nowrap;
+    }
+    h4{
+        @apply text-base;
+    }
+    h4 span{
+        @apply text-sm block font-normal;
+    }
+    p{
+        small{
+            @apply block;
+        }
+    }
+    td{
+         border-bottom: solid 1px;
+         @apply  border-gray-200 py-2;
+    }
+    .product{
+        td{
+            @apply bg-gray-200 text-sm border-gray-300;
+        }
+        
+
+        h5{
+            @apply text-sm;
+        }
+    }
+}
+
+.InshopCheckout{
+    @apply mt-6;
+}
+
+.page-Checkout_Delivery, .page-Checkout_Customer, .page-Checkout_Summary{
+ 
+}
+
+#InshopCheckout{
+    
+    .row-50-50{
+        @media (min-width: 900px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 14px;
+        }
+        
+    }
+    .col-sm-24{
+        grid-column: span 2;
+        .row{
+           display: grid;
+           @media (min-width: 900px) {
+                grid-template-columns: 1fr 1fr; 
+                grid-gap: 14px;
+            }
+           
+        }
+    }
+    .row-70-30{
+            display: grid;
+           grid-template-columns: 70% 1fr; 
+           grid-gap: 14px;
+    }
+    .row-30-70{
+        display: grid;
+           grid-template-columns: 1fr 70%; 
+           grid-gap: 14px;
+    }
+
+    .left-side{
+        @apply bg-white px-4 py-4 rounded-md shadow-xl;
+    }
+}
+
+
+.PayUListCover--header{
+    @apply flex items-center;
+    span{
+        @apply ml-auto;
+    }
+}
+
+
+#InshopCheckout{
+    .errorMessage{
+        @apply text-center pt-5;
+    }
+}
+
+#packeta-widget{
+    position: fixed;
+    top: 10%;
+    z-index: 9999;
+}
+
+#open-packeta-widget{
+    @apply underline;
+    display: inline-block;
+    margin-left: 25px;
+}
+.selectedPlaceVisible{
+    margin-left: 25px;
+}
+
+.delivery_country_select{
+    @apply flex items-center font-semibold;
+    span{
+        min-width: 130px;
+    }
+}
+
+.delivery-list-new{
+    @apply mt-3;
+    h3{
+        @apply text-xl;
+    }
+}
+
+.select-icons{
+    input{
+        @apply mr-2
+    }
+    label{
+        max-width: 680px;
+        @apply flex items-center;
+    }
+    li{
+        border-bottom: solid 1px;
+        @apply border-gray-300 py-3;
+    }
+    .option-icon{
+        width: 70px;
+        flex: 0 0 70px;
+        @apply  mr-4;
+        img{
+            width: 100%;
+        }
+    }
+    .option-name{
+        @apply  mr-2;
+    }
+    .option-price{
+        @apply ml-auto font-semibold;
+    }
+
+}
+
+.select_payment{
+    @apply mt-10;
+}
+
+
+.page-Checkout_Delivery{
+    h2{
+        color: #014983;
+    }
+}
+
+.payment-select{
+    .option-icon{
+        width: 70px;
+        flex: 0 0 35px;
+    }
+}

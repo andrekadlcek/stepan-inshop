@@ -1,0 +1,40 @@
+.info-page {
+    text-align: start !important;
+    h1 {
+        text-align: center;
+    }
+}
+.container-grid {
+    @apply grid grid-cols-2 gap-8 pt-8 pb-8 pl-4 pr-4;
+}
+.container-grid {
+    h3:first-child {
+        @apply self-end;
+    }
+}
+.item {
+    @apply leading-5;
+    img {
+        width: 75px;
+        height: 75px;
+        float: left !important;
+    }
+    p {
+        padding-top: 0.8rem;
+    }
+    p, h4, h5 {
+        margin-left: 90px;
+    }
+}
+.blue-highlight {
+    color: #035599;
+}
+/*
+.container-grid:nth-child(odd) {
+    .item:first-child {
+        h4 {
+            color: red;
+        }
+    }
+}
+*/

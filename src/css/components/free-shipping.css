@@ -1,0 +1,44 @@
+.free-shipping-meter--cover{
+    @apply py-2;
+}
+.free-shipping-meter--header{
+    @apply text-center  mb-2;
+    b{
+        color: #0c4f87;
+    }
+}
+
+.free-shipping-meter{
+    @apply mx-2 rounded-full ;
+        background: #e6f3fc;
+        height: 15px
+}
+
+.free-shipping-meter--inner{
+    @apply rounded-full;
+    background: #0c4f87;
+    height: 15px
+}
+
+.mdc-dialog__content{
+    .free-shipping-meter--cover{
+        @apply mt-2;
+        border-radius: 10px;
+        margin: 0 auto;
+    }
+}
+
+.mdc-dialog__container .free-shipping-meter--cover{
+    @apply mt-2;
+}
+
+.free-shipping-meter--cover{
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 10px;
+    @media (max-width: 800px) {
+         margin-left: 1rem;
+         margin-right: 1rem;
+    }
+   
+}

@@ -1,0 +1,36 @@
+.format-text{
+
+}
+
+.info-page{
+    @apply bg-white py-4 px-4 shadow-2xl;
+    h1, h2{
+        @apply mb-3 pl-4 pr-4;
+    }
+    h3{
+        @apply mt-3 pl-4 pr-4;
+    }
+    .ql-video{
+        width: 100%;
+        height: 430px;
+    }
+    a{
+        @apply underline text-gray-800 !important;
+    }
+    ul {
+        @apply my-2;
+        li{
+            @apply mb-1;
+            margin-left: 25px;
+            list-style-type: square;
+        }
+    }
+    .dopZ{
+        color: #DC143C;
+        @apply font-bold;
+    }
+    img{
+        max-width: 100%;
+        @apply py-2;
+    }
+}

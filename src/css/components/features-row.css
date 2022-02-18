@@ -1,0 +1,26 @@
+.features-row--cover{
+        background-image: linear-gradient(-55deg,#ff5858,#f09819);
+        @apply my-11;
+}
+
+.features-row{
+    
+    @media (min-width : 570px) {
+        @apply grid grid-cols-3 gap-4;
+    }
+}
+.features-row--item{
+    grid-template-columns: 50px 1fr;
+    @apply grid py-7;
+}
+
+.features-row--item_icon{
+    @apply flex items-center;
+    svg{
+        height: 36px;
+    }
+}
+
+.features-row--item_name{
+    @apply flex items-center text-white pl-4;
+}

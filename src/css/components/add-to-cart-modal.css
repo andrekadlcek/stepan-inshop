@@ -1,0 +1,46 @@
+.add-to-cart-modal--title{
+    @apply px-2 py-2;
+}
+
+.add-to-cart-modal--title_success{
+     @apply flex items-center;
+     span{
+         @apply ml-1;
+     }
+     svg{
+         stroke: darkgreen;
+     }
+}
+
+.mdc-dialog .mdc-dialog__content{
+    width: 450px;
+     @apply px-2 py-2;
+}
+
+.add-to-cart-modal--product{
+    @apply grid;
+    grid-template-columns: 60px 1fr;
+    grid-gap: 8px;
+}
+
+.mdc-dialog__actions{
+    .cancel{
+        @apply mr-auto;
+    }
+}
+
+.close-smui-modal{
+    width: 30px;
+    position: absolute;
+    top: 17px;
+    right: 16px;
+    @apply cursor-pointer;
+}
+
+.error-message{
+    @apply text-center text-red;
+}
+
+.mdc-dialog--open{
+    z-index: 99999;
+}

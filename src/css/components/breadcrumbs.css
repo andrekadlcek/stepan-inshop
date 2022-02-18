@@ -1,0 +1,14 @@
+#breadcrumb{
+    @apply mt-4 text-sm;
+}
+.breadcrumb{
+    .inner{
+        @apply flex items-center;
+        span{
+            @apply mr-2 text-gray-500;
+        }
+        a{
+            @apply text-gray-900;
+        }
+    }
+}

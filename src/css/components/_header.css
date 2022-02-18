@@ -1,0 +1,100 @@
+#mainHeader{
+    box-shadow: 0 0 10px rgb(0 0 0 / 5%);
+    border-bottom: solid 3px;
+    @apply border-gray-700 fixed left-0 top-0 w-full z-30 bg-gray-100;
+}
+
+#mainHeader .xl-container{
+    height: 70px;
+    padding-right: 0;
+    @apply flex items-center;
+}
+
+.main-header--logo {
+    @apply py-2;
+    flex: 0 0 90px;
+    img{
+         max-height: 100%;
+    }
+}
+
+#header-right{
+    @apply h-full;
+}
+
+.header-right-nav{
+    @apply flex items-center h-full;
+    li{
+        @apply h-full;
+    }
+    a{
+        @apply h-full flex items-center px-3 cursor-pointer w-20 flex-col;
+    }
+}
+.header-right--cart{
+    @apply text-white bg-cta;
+    svg{
+         fill: white;
+    }
+}
+
+.header-right--account{
+    border-left: solid 1px;
+    @apply bg-gray-100 border-gray-200;
+}
+
+.header-right-icon{
+    @apply flex items-center h-1/2;
+}
+
+.header-right-icon svg{
+    width: 20px;
+}
+
+.header-right-text{
+    @apply flex items-center text-sm h-1/2;
+}
+
+.header-right-item{
+    @apply flex flex-col;
+}
+
+.header-right--search{
+    @apply bg-gray-100;
+    
+}
+
+.hamburger-nav{
+    @apply h-full flex justify-center items-center mr-2 ;
+    display: none;
+}
+
+.nav-icon {
+ 
+  width: 40px;
+  margin-left: auto;
+}
+
+.nav-icon:after, 
+.nav-icon:before, 
+.nav-icon div {
+  @apply bg-gray-700;
+  border-radius: 3px;
+  content: '';
+  display: block;
+  height: 5px;
+  margin: 7px 0;
+  transition: all .2s ease-in-out;
+}
+
+.show-nav .nav-icon:before {
+  transform: translateY(12px) rotate(135deg);
+}
+
+.show-nav .nav-icon:after {
+  transform: translateY(-12px) rotate(-135deg);
+}
+
+.show-nav .nav-icon div {
+  transform: scale(0);
+}

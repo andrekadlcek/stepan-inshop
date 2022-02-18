@@ -1,0 +1,63 @@
+.main-page-books-row{
+    
+    @media (min-width : 1000px) {
+        @apply grid gap-7;
+        grid-template-columns: 1fr 290px;
+    }
+    h3{
+        @apply mt-8 mb-6;
+    }
+}
+
+.main-page--books{
+    
+}
+
+.main-page--sidebar{
+
+}
+
+.main-page--books_list{
+    
+    @media (min-width: 700px) {
+       @apply grid grid-cols-4 gap-4;
+    }
+}
+
+
+.selection-list{
+
+}
+
+.selection-item{
+    white-space: normal;
+    grid-template-columns: 60px 1fr;
+    @apply grid   pb-2 mb-2;
+    @media (min-width: 1000px) {
+        @apply border-b border-gray-300;
+    }
+}
+
+.celection-item--details{
+    @apply flex flex-col pl-2 justify-center;
+}
+
+.rating-price{
+    @apply  mt-2;
+    @media (min-width: 740px) {
+        @apply flex;
+    }
+    .rating{
+        @apply flex;
+    }
+    .price{
+        @apply ml-auto text-gray-400 text-sm;
+    }
+}
+
+#main-slider .md-container{
+    @media (max-width: 800px) {
+        padding-left: 0;
+        padding-right: 0;
+    }  
+}
