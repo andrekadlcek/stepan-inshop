@@ -5,7 +5,7 @@ import CartItem from './cart-item.svelte'
 import { onMount } from "svelte";
 
 // inicializace promenne kosiku 
-let cartData :CardDataProps = null
+let cartData : CardDataProps = null
 let loading : boolean = true
 
 // funkce pro nacteni kosiku z api
@@ -30,7 +30,34 @@ onMount( async () => {
 
 <div class="page-header">
     <h1>Košík</h1>
-     {#if loading}
+</div>
+<table>
+    <tbody>
+        <tr class="table-header">
+            <td class="product-view">
+                <ul class="table-cells">
+                    <li class="photo"></li>
+                    <li class="name">
+                        Název
+                    </li>
+                </ul>
+            </td>
+            <td class="product-price">
+                <ul class="table-cells">
+                    <li class="unit-price view-price">Jednotková cena</li>
+                    <li class="unit-price view-price">Počet</li>
+                    <li class="unit-price view-price">Celková cena</li>
+                </ul>
+            </td>
+            <td class="product-remove">
+                <ul class="table-cells">
+                    <li class="remove"></li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+    {#if loading}
         <p>Pracuji</p>
     {:else}
         {#if cartData}
@@ -43,5 +70,3 @@ onMount( async () => {
             <p>Košík je prázdny</p>
         {/if}
     {/if}
-    
-</div>
