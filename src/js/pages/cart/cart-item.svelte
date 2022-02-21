@@ -3,19 +3,6 @@ import { element } from "svelte/internal";
 
 import { CartItemProps } from "./types";
     export let item : CartItemProps;
-    let CustomerPriceWithVat = item.CustomerPriceWithVat.replace("&nbsp;", " ");
-    let CustomerPrice = item.CustomerPrice.replace("&nbsp;", " ").concat(' ( bez DPH )');
-    let ProductParam = item.Components;
-
-    function load() {
-        if (ProductParam != undefined) {
-            ProductParam.forEach(element => {
-                return element.name  
-            });
-        } else {
-            return ""
-        }
-    }
 </script>
 
 <tr class="product-row">
@@ -26,22 +13,21 @@ import { CartItemProps } from "./types";
             </li>
             <li class="name">
                 <a href="{item.url}" title="{item.name}">{item.name}</a>
+                {#if item.Components}
                 <ul class="Components">
-                    <li>
-                        {load()}
-                        <!--
-                        {#each ProductParam as detail}
-                            {detail.name}
-                        {/each}
-                        -->
-                    </li>
+                     {#each item.Components as component}
+                          <li>{component.name}</li>
+                     {/each}
                 </ul>
+                {/if}
+            
+               
             </li>
         </ul>
     </td>
     <td class="product-price">
-        <ul>{CustomerPriceWithVat}</ul>
-        <ul>{CustomerPrice}</ul>
+        <ul>{@html item.CustomerPriceWithVat}</ul>
+        <ul>{@html item.CustomerPrice}</ul>
     </td>
     <td class="product-remove"></td>
 

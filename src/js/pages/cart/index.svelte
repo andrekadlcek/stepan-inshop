@@ -19,6 +19,8 @@ const getCart = async (): Promise<CardDataProps>  => {
     }
 }
 
+
+
 // u prvniho nacteni spusti
 onMount( async () => {
         cartData = await getCart()
@@ -31,7 +33,12 @@ onMount( async () => {
 <div class="page-header">
     <h1>Košík</h1>
 </div>
-<table>
+
+    {#if loading}
+        <p>Pracuji</p>
+    {:else}
+        {#if cartData}
+            <table class="cart-list">
     <tbody>
         <tr class="table-header">
             <td class="product-view">
@@ -55,17 +62,12 @@ onMount( async () => {
                 </ul>
             </td>
         </tr>
+           {#each cartData.items as item}
+                    <CartItem item={item} />
+            {/each}
     </tbody>
 </table>
-    {#if loading}
-        <p>Pracuji</p>
-    {:else}
-        {#if cartData}
-            <ul>
-                {#each cartData.items as item}
-                    <CartItem item={item} />
-                {/each}
-            </ul>
+
             {:else}
             <p>Košík je prázdny</p>
         {/if}

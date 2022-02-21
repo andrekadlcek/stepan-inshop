@@ -1,7 +1,6 @@
 export interface CartItemProps {
     Cart_CatalogueNumber: string;
     CatalogueNumber: string;
-    Components:  any;
     Count: string;
     CustomerPrice: string;
     CustomerPriceWithVat: string;
@@ -19,6 +18,15 @@ export interface CartItemProps {
     priceWithVatForRequiredAmount: number;
     url: string;
     viewAsLink: boolean;
+    Components?: {
+        count: number;
+        idcomponent: number;
+        name: string;
+        price: number;
+        priceForCount: number;
+        priceWithVat: number;
+        priceWithVatForCount: number;
+    }[]
 }
 /*
 export interface CartItemDetail {
