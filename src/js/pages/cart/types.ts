@@ -28,17 +28,6 @@ export interface CartItemProps {
         priceWithVatForCount: number;
     }[]
 }
-/*
-export interface CartItemDetail {
-    count: number;
-    idcomponent: number;
-    name: string;
-    price: number;
-    priceForCount: number;
-    priceWithVat: number;
-    priceWithVatForCount: number;
-}
-*/
 export interface CardDataProps {
     Cart_TotalPrice: {
         price: {
