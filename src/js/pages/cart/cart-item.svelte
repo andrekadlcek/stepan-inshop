@@ -4,21 +4,9 @@ import { element } from "svelte/internal";
 import { CartItemProps } from "./types";
     export let item : CartItemProps;
 
-    let productCount = item.count;
-
-    function totalPrice(count:number, price:any, type:string) {
-        let total = count * price;
-        if (type === "string") {
-            return total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + " Kč";
-        } if (type === "number") {
-            return total
-        } {
-            return null
-        }
-    }
-  
-console.log(item);
-
+function dataEdit() {
+    
+}
 </script>
 
 <tr class="product-row">
@@ -48,7 +36,7 @@ console.log(item);
                 <small>{@html item.CustomerPrice} (bez DPH)</small>
             </li>
             <li class="count">
-                <input bind:value={productCount} name="CartItem_10" type="text" id="CartItem_10" autocomplete="off" class="form-control" >
+                <input bind:value={item.count} on:change={dataEdit} name="CartItem_{item.IDCartItem}" type="text" id="CartItem_{item.IDCartItem}" autocomplete="off" class="form-control" >
                 ks
             </li>
             <li class="total-price view-price ">
