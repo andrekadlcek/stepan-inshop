@@ -52,8 +52,8 @@ console.log(item);
                 ks
             </li>
             <li class="total-price view-price ">
-                <span class="PriceWithVatForRequiredAmount" data-catnumber="019" data-idcartitem="10">{totalPrice(productCount, item.customerPriceWithVat, "string")}</span>
-                <small>{totalPrice(productCount, item.customerPrice, "string")} (bez DPH)</small>
+                <span class="PriceWithVatForRequiredAmount">{@html item.PriceWithVatForRequiredAmount}</span>
+                <small>{@html item.PriceForRequiredAmount} (bez DPH)</small>
             </li>
         </ul>
     </td>

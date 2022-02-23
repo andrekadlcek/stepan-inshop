@@ -72,7 +72,7 @@ onMount( async () => {
                         <a href="/" class="btn large labeled"><i class="label icon ico icon-preview"></i> Pokračovat v nákupu </a>
                     </div>
                     <div class="button CartDeleteAll">
-                        {cartDelete}
+                        <button class="btn large labeled"><i class="label icon ico icon-trash"></i> Smazat košík</button>
                     </div>
                 </div>
             </td>
@@ -88,10 +88,10 @@ onMount( async () => {
                         </h3>
                     </li>
                     <li class="total-price view-price">
-                            <span class="Cart_TotalPrice-PriceWithVat">{CartTotalPrice}</span>
+                            <span class="Cart_TotalPrice-PriceWithVat">{@html cartData.Cart_TotalPrice.price.PriceWithVat}</span>
                                 
                                 <small>
-                                    <span class="Cart_TotalPrice-Price">Cena</span> (Celkem bez DPH)
+                                    <span class="Cart_TotalPrice-Price">{@html cartData.Cart_TotalPrice.price.Price}</span> (Celkem bez DPH)
                                 </small>
                     </li>
                 </ul>
