@@ -7,6 +7,8 @@ import { onMount } from "svelte";
 // inicializace promenne kosiku 
 let cartData : CardDataProps = null
 let loading : boolean = true
+const CartTotalPrice = (window as any).CartTotalPrice;
+const cartDelete = (window as any).cartDelete;
 
 // funkce pro nacteni kosiku z api
 const getCart = async (): Promise<CardDataProps>  => {
@@ -18,8 +20,6 @@ const getCart = async (): Promise<CardDataProps>  => {
         return null
     }
 }
-
-
 
 // u prvniho nacteni spusti
 onMount( async () => {
@@ -69,15 +69,12 @@ onMount( async () => {
             <td colspan="3">
                 <div class="nav-buttons">
                     <div class="button CartContinue">
-                        <button id="ctl01_ctl30_ctl00_ctl00_ctl02_ctl07_ctl04_ctl00_ctl00" class="btn large labeled"><i class="label icon ico icon-preview"></i> Pokračovat v nákupu</button><input name="action" type="hidden" value="DoChangeLevel">
-                    </div> <!-- button -->
-                    <div class="button CartRecalculate">
-                        <button id="ctl01_ctl30_ctl00_ctl00_ctl02_ctl07_ctl04_ctl01_ctl01" class="btn large">Přepočítat</button><input name="action" type="hidden" value="RecalculateCart">
-                    </div> <!-- button -->
+                        <a href="/" class="btn large labeled"><i class="label icon ico icon-preview"></i> Pokračovat v nákupu </a>
+                    </div>
                     <div class="button CartDeleteAll">
-                        <button id="ctl01_ctl30_ctl00_ctl00_ctl02_ctl07_ctl04_ctl02_ctl02" class="btn large labeled"><i class="label icon ico icon-trash"></i> Smazat košík</button><input name="action" type="hidden" value="ClearCart">
-                    </div> <!-- button -->
-                </div> <!-- row -->
+                        {cartDelete}
+                    </div>
+                </div>
             </td>
         </tr>
         <tr class="table-footer total-price">
@@ -91,12 +88,10 @@ onMount( async () => {
                         </h3>
                     </li>
                     <li class="total-price view-price">
-                                <span class="Cart_TotalPrice-PriceWithVat">
-                                    Cena</span>
+                            <span class="Cart_TotalPrice-PriceWithVat">{CartTotalPrice}</span>
+                                
                                 <small>
-                                    <span class="Cart_TotalPrice-Price">
-                                        Cena</span> (
-                                    Celkem bez DPH)
+                                    <span class="Cart_TotalPrice-Price">Cena</span> (Celkem bez DPH)
                                 </small>
                     </li>
                 </ul>
