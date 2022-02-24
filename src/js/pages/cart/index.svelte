@@ -45,7 +45,7 @@ export function dataEdit() {
         <p>Pracuji</p>
     {:else}
         {#if cartData}
-<form id="cart-form" action="/inshop/scripts/shop.aspx" method="get">
+<form id="cart-form" action="/inshop/scripts/shop.aspx" method="post">
     <table class="cart-list">
         <tbody>
             <tr class="table-header">
