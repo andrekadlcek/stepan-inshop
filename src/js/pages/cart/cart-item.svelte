@@ -1,10 +1,33 @@
 <script type="ts">
-import { element } from "svelte/internal";
-import dataEdit from './index.svelte'
+import { useEffect } from "../../hooks/useeffect";
+import { recalculateCart } from "../../stores/cart-store";
 
 import { CartItemProps } from "./types";
-    export let item : CartItemProps;
+export let item : CartItemProps;
+let timer;
+let count = item.count
 
+// on change event
+const change = (event) => {
+        let _count
+        // obrana aby neslo vlozit negativni hodnoty
+        if(+event.target.value > 1){
+            _count = +event.target.value
+        }
+        else{
+            _count = 1
+        }
+
+        // timer aby se prepocital kosik po 0.7 sekund - scenar kdy zakaznik zada dvouciferne cislo aby neprepocitaval hned u prvniho
+        clearTimeout(timer);
+		timer = setTimeout(() => {
+            count = _count
+		}, 750);
+}
+
+ useEffect(() => {
+		return () => recalculateCart();
+	}, () => [count]);
 
 </script>
 
@@ -35,7 +58,7 @@ import { CartItemProps } from "./types";
                 <small>{@html item.CustomerPrice} (bez DPH)</small>
             </li>
             <li class="count">
-                <input bind:value={item.count} on:change={dataEdit} name="CartItem_{item.IDCartItem}" type="text" id="CartItem_{item.IDCartItem}" autocomplete="off" class="form-control" >
+                <input bind:value={count} on:input="{change}" type=number   name="CartItem_{item.IDCartItem}" id="CartItem_{item.IDCartItem}" autocomplete="off" class="form-control" >
                 ks
             </li>
             <li class="total-price view-price ">

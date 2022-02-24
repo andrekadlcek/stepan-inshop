@@ -1,39 +1,6 @@
 <script type="ts">
-import { getCartAction } from "../../actions/cart-actions";
-import { CardDataProps, CartResultProps } from "./types";
 import CartItem from './cart-item.svelte'
-import { onMount } from "svelte";
-import cashDom from "cash-dom";
-
-// inicializace promenne kosiku 
-let cartData : CardDataProps = null
-let loading : boolean = true
-const CartTotalPrice = (window as any).CartTotalPrice;
-const cartDelete = (window as any).cartDelete;
-
-// funkce pro nacteni kosiku z api
-const getCart = async (): Promise<CardDataProps>  => {
-    const res:CartResultProps = await getCartAction()
-    if(res.result && !res.data.cartisempty){
-        return res.data.Cart
-    }
-    else{
-        return null
-    }
-}
-
-// u prvniho nacteni spusti
-onMount( async () => {
-        cartData = await getCart()
-        loading = false
-})
-
-export function dataEdit() {
-    let data = cashDom('cart-form').serialize()
-    console.log(data);
-    
-}
-
+import { cartData, loadingCart } from "../../stores/cart-store";
 </script>
 
 
@@ -41,10 +8,10 @@ export function dataEdit() {
     <h1>Košík</h1>
 </div>
 
-    {#if loading}
+    {#if $loadingCart}
         <p>Pracuji</p>
     {:else}
-        {#if cartData}
+        {#if $cartData}
 <form id="cart-form" action="/inshop/scripts/shop.aspx" method="post">
     <table class="cart-list">
         <tbody>
@@ -70,7 +37,7 @@ export function dataEdit() {
                     </ul>
                 </td>
             </tr>
-            {#each cartData.items as item}
+            {#each $cartData.items as item}
                     <CartItem item={item} />
             {/each}
             <tr class="table-footer">
@@ -96,10 +63,10 @@ export function dataEdit() {
                             </h3>
                         </li>
                         <li class="total-price view-price">
-                                <span class="Cart_TotalPrice-PriceWithVat">{@html cartData.Cart_TotalPrice.price.PriceWithVat}</span>
+                                <span class="Cart_TotalPrice-PriceWithVat">{@html $cartData.Cart_TotalPrice.price.PriceWithVat}</span>
                                     
                                     <small>
-                                        <span class="Cart_TotalPrice-Price">{@html cartData.Cart_TotalPrice.price.Price}</span> (Celkem bez DPH)
+                                        <span class="Cart_TotalPrice-Price">{@html $cartData.Cart_TotalPrice.price.Price}</span> (Celkem bez DPH)
                                     </small>
                         </li>
                     </ul>
@@ -112,6 +79,9 @@ export function dataEdit() {
             </tr>
         </tbody>
     </table>
+    <input type="hidden" name="jsonresult" value="1">
+        <input type="hidden" name="__EVENTARGUMENT" value="Action=RecalculateCart">
+        <input type="hidden" name="action" value="RecalculateCart">
 </form>
             {:else}
             <p>Košík je prázdny</p>
