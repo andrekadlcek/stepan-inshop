@@ -25,6 +25,10 @@ const change = (event) => {
 		}, 750);
 }
 
+const erase = () => {
+    console.log('test');
+    
+}
  useEffect(() => {
 		return () => recalculateCart();
 	}, () => [count]);
@@ -58,7 +62,7 @@ const change = (event) => {
                 <small>{@html item.CustomerPrice} (bez DPH)</small>
             </li>
             <li class="count">
-                <input bind:value={count} on:input="{change}" type=number   name="CartItem_{item.IDCartItem}" id="CartItem_{item.IDCartItem}" autocomplete="off" class="form-control" >
+                <input bind:value={count} on:input="{change}" type=number name="CartItem_{item.IDCartItem}" id="CartItem_{item.IDCartItem}" autocomplete="off" class="form-control" >
                 ks
             </li>
             <li class="total-price view-price ">
@@ -70,7 +74,7 @@ const change = (event) => {
     <td class="product-remove">
         <ul class="table-cells">
             <li class="remove">
-                <a href="scripts/shop.aspx?action=deletecartitem&IDCartItem={item.IDCartItem}"><i class="text-icon icon-remove"></i></a>
+                <input on:input={erase} type=image name="CartItem_{item.IDCartItem}" id="CartItem_{item.IDCartItem}" autocomplete="off" class="form-control" src="" alt="" >
             </li>
         </ul>
     </td>

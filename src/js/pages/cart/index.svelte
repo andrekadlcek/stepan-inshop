@@ -80,8 +80,15 @@ import { cartData, loadingCart } from "../../stores/cart-store";
         </tbody>
     </table>
     <input type="hidden" name="jsonresult" value="1">
-        <input type="hidden" name="__EVENTARGUMENT" value="Action=RecalculateCart">
-        <input type="hidden" name="action" value="RecalculateCart">
+    <input type="hidden" name="__EVENTARGUMENT" value="Action=RecalculateCart">
+    <input type="hidden" name="action" value="RecalculateCart">
+    <tr class="checkout checkout-tr-button">
+        <td colspan="3">
+            <div class="checkout-button">
+                <button class="btn xlarge btn-primary labeled labeled-right"><i class="label icon ico icon-next"></i> Přejít do pokladny</button><input name="action" type="hidden" value="ShowCheckout">
+            </div>
+        </td>
+    </tr>
 </form>
             {:else}
             <p>Košík je prázdny</p>
