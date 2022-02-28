@@ -25,8 +25,9 @@ const change = (event) => {
 		}, 750);
 }
 
-const erase = () => {
-    console.log('test');
+const erase = (e) => {
+    e.preventDefault()
+    console.log(`akce vymaze item id: ${item.IDProduct}`);
     
 }
  useEffect(() => {
@@ -74,7 +75,7 @@ const erase = () => {
     <td class="product-remove">
         <ul class="table-cells">
             <li class="remove">
-                <input on:input={erase} type=image name="CartItem_{item.IDCartItem}" id="CartItem_{item.IDCartItem}" autocomplete="off" class="form-control" src="" alt="" >
+                <a on:click="{erase}" href="/#"><i class="text-icon icon-remove"></i></a>
             </li>
         </ul>
     </td>
