@@ -1,6 +1,11 @@
 <script type="ts">
 import CartItem from './cart-item.svelte'
-import { cartData, loadingCart } from "../../stores/cart-store";
+import { cartData, clearCart, loadingCart } from "../../stores/cart-store";
+
+const clearAll = (e) => {
+    e.preventDefault()
+    clearCart()
+}
 </script>
 
 
@@ -47,7 +52,7 @@ import { cartData, loadingCart } from "../../stores/cart-store";
                             <a href="/" class="btn large labeled"><i class="label icon ico icon-preview"></i> Pokračovat v nákupu </a>
                         </div>
                         <div class="button CartDeleteAll">
-                            <button class="btn large labeled"><i class="label icon ico icon-trash"></i> Smazat košík</button>
+                            <button on:click="{clearAll}" class="btn large labeled"><i class="label icon ico icon-trash"></i> Smazat košík</button>
                         </div>
                     </div>
                 </td>

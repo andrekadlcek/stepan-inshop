@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store'
-import { getCartAction, recalculateCartAction, removeCartItemAction } from '../actions/cart-actions'
+import { clearCartAction, getCartAction, recalculateCartAction, removeCartItemAction } from '../actions/cart-actions'
 import { CardDataProps } from '../pages/cart/types'
 import cashDom from 'cash-dom'
 
@@ -44,4 +44,10 @@ export const removeItem = async (productID: number) => {
     }
     console.log(res);
     
+}
+export const clearCart = async () =>{
+    const res = await clearCartAction();
+    if (res.result) {
+        cartData.set(res.data.Cart)
+    }
 }
