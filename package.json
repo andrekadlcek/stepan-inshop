@@ -5,7 +5,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "export NODE_ENV=production && webpack --config  ./webpack.prod.config.js --mode production",
-        "build:win": "export NODE_ENV=production && webpack --config  ./webpack.prod.config.js --mode production",
+        "build:win": "set NODE_ENV=production && webpack --config  ./webpack.prod.config.js --mode production",
         "start": "webpack serve --config  ./webpack.config.js --mode development --inline",
         "local": "webpack serve --config  ./webpack.config.js  --mode development"
     },
