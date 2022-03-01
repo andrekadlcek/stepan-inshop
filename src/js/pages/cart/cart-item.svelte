@@ -1,11 +1,15 @@
 <script type="ts">
 import { useEffect } from "../../hooks/useeffect";
-import { recalculateCart } from "../../stores/cart-store";
+import { recalculateCart, removeItem } from "../../stores/cart-store";
 
 import { CartItemProps } from "./types";
 export let item : CartItemProps;
 let timer;
 let count = item.count
+
+$ : {
+  //  count = item.count;
+}
 
 // on change event
 const change = (event) => {
@@ -27,12 +31,13 @@ const change = (event) => {
 
 const erase = (e) => {
     e.preventDefault()
-    console.log(`akce vymaze item id: ${item.IDProduct}`);
-    
+    console.log(`akce vymaze item id: ${item.IDProduct}`);   
+    removeItem(item.IDCartItem)
 }
  useEffect(() => {
 		return () => recalculateCart();
 	}, () => [count]);
+
 
 </script>
 
