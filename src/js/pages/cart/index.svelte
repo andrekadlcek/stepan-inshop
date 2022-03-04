@@ -113,4 +113,7 @@ console.log(getGifts);
             <input type="hidden" name="action" value="RecalculateCart">
         </form>
     </div>
+    {:else}
+            <p>Žádné dárky</p>   
 {/if}
+

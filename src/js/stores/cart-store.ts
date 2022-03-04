@@ -54,8 +54,8 @@ export const clearCart = async () =>{
 
 export const getGifts = async () =>{
     const res = await getGiftsAction();
-    if (res.result) {
-        cartGifts.set(res.data)
-        
-    }
+    cartGifts.set(res.data)
+
 }
+
+getGifts()
