@@ -1,9 +1,10 @@
 import { writable } from 'svelte/store'
-import { clearCartAction, getCartAction, recalculateCartAction, removeCartItemAction } from '../actions/cart-actions'
+import { clearCartAction, getCartAction, getGiftsAction, recalculateCartAction, removeCartItemAction } from '../actions/cart-actions'
 import { CardDataProps } from '../pages/cart/types'
 import cashDom from 'cash-dom'
 
 
+export const cartGifts = writable<CardDataProps>(null)
 export const cartData = writable<CardDataProps>(null)
 export const loadingCart = writable<boolean>(false)
 
@@ -11,7 +12,7 @@ export const loadingCart = writable<boolean>(false)
 const setCartLoading = (data: boolean) => {
     loadingCart.set(data)
 }
-// funkce pro nacteni stavu casiku
+// funkce pro nacteni stavu kosiku
 const getCartData = async () => {
     setCartLoading(true)
     const res = await getCartAction()
@@ -42,12 +43,19 @@ export const removeItem = async (productID: number) => {
     if (res.result) {
         cartData.set(res.data.Cart)
     }
-    console.log(res);
     
 }
 export const clearCart = async () =>{
     const res = await clearCartAction();
     if (res.result) {
         cartData.set(res.data.Cart)
+    }
+}
+
+export const getGifts = async () =>{
+    const res = await getGiftsAction();
+    if (res.result) {
+        cartGifts.set(res.data)
+        
     }
 }
