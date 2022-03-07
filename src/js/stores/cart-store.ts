@@ -54,9 +54,16 @@ export const clearCart = async () =>{
 
 export const getGifts = async () =>{
     const res = await getGiftsAction();
+<<<<<<< HEAD
     cartGifts.set(res)
     console.log(res);
     
+=======
+    console.log("res.data", res.data);
+    
+    cartGifts.set(res.data)
+
+>>>>>>> bf6589c3b1252d6ecc84ed7aef69f1b87a049505
 }
 
 getGifts()
