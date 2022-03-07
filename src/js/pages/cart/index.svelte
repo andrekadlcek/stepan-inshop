@@ -2,12 +2,12 @@
 import CartItem from './cart-item.svelte'
 import CartGift from './cart-gifts.svelte'
 import { cartData, clearCart, cartGifts, loadingCart } from "../../stores/cart-store";
+import CartGifts from './cart-gifts.svelte';
 
 const clearAll = (e) => {
     e.preventDefault()
     clearCart()
 }
-console.log($cartData);
 
 </script>
 
@@ -101,9 +101,12 @@ console.log($cartData);
             <p>Košík je prázdny</p>
         {/if}
     {/if}
-{#if $cartGifts}
-    <CartGift />
+
+    {#if $cartGifts}
+    {#each $cartGifts as item}
+            <CartGift item={item}/>
+    {/each}
     {:else}
-            <p>Žádné dárky</p>   
-{/if}
+        <p>Žádné dárky</p>   
+    {/if}
 
