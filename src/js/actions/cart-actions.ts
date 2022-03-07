@@ -21,5 +21,5 @@ export const clearCartAction = () => {
 }
 
 export const getGiftsAction = () => {
-    return axios.get('/inshop/scripts/shop.aspx?action=ViewTemplate&Path=OrderGiftJson&LayoutNotIncluded=1&ajax=1').then(res => res.data)
+    return axios.get('/inshop/scripts/shop.aspx?action=ViewTemplate&Path=OrderGiftJson&LayoutNotIncluded=1&ajax=1').then(res => res)
 }
