@@ -1,8 +1,7 @@
 <script type="ts">
 import CartItem from './cart-item.svelte'
-import CartGift from './cart-gifts.svelte'
 import { cartData, clearCart, cartGifts, loadingCart } from "../../stores/cart-store";
-import CartGifts from './cart-gifts.svelte';
+import GiftLevel from './gift-level.svelte'
 
 const clearAll = (e) => {
     e.preventDefault()
@@ -97,16 +96,26 @@ const clearAll = (e) => {
         </td>
     </tr>
 </form>
+
+        {#if $cartGifts}
+             <div id="OrderGift">
+                    <h2>Váš dárek</h2>
+                    {#if !$cartGifts[0].IsEnabled}
+                          <p class="orderGiftMissingPrice">Přidáte-li do košíku ještě další zboží za {$cartGifts[0].MissingOrderPrice}, můžete získat bezplatný dárek</p>
+                    {/if}
+                   
+
+                    <form id="orderGiftForm" action="/inshop/scripts/shop.aspx?action=addgift">
+                        {#each $cartGifts as item}
+                                <GiftLevel giftLevel={item}/>
+                        {/each}
+                    </form>
+            </div>
+        {/if}
+
+       
+
         {:else}
             <p>Košík je prázdny</p>
         {/if}
     {/if}
-
-    {#if $cartGifts}
-    {#each $cartGifts as item}
-            <CartGift item={item}/>
-    {/each}
-    {:else}
-        <p>Žádné dárky</p>   
-    {/if}
-

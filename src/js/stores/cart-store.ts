@@ -4,7 +4,7 @@ import { CartDataProps, CartGiftsProps } from '../pages/cart/types'
 import cashDom from 'cash-dom'
 
 
-export const cartGifts = writable<CartGiftsProps>(null)
+export const cartGifts = writable<CartGiftsProps[]>(null)
 export const cartData = writable<CartDataProps>(null)
 export const loadingCart = writable<boolean>(false)
 
@@ -54,16 +54,10 @@ export const clearCart = async () =>{
 
 export const getGifts = async () =>{
     const res = await getGiftsAction();
-<<<<<<< HEAD
-    cartGifts.set(res)
-    console.log(res);
-    
-=======
     console.log("res.data", res.data);
     
     cartGifts.set(res.data)
 
->>>>>>> bf6589c3b1252d6ecc84ed7aef69f1b87a049505
 }
 
 getGifts()
