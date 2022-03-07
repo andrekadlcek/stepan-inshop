@@ -1,12 +1,13 @@
 <script type="ts">
 import CartItem from './cart-item.svelte'
-import { cartData, cartGifts, clearCart, getGifts, loadingCart } from "../../stores/cart-store";
+import CartGift from './cart-gifts.svelte'
+import { cartData, clearCart, cartGifts, loadingCart } from "../../stores/cart-store";
 
 const clearAll = (e) => {
     e.preventDefault()
     clearCart()
 }
-console.log(getGifts);
+console.log($cartData);
 
 </script>
 
@@ -101,18 +102,7 @@ console.log(getGifts);
         {/if}
     {/if}
 {#if $cartGifts}
-    <div id="OrderGift">
-        <h2>Váš dárek</h2>
-        <form action="/inshop/scripts/shop.aspx?action=addgift" method="post" class="orderGift">
-            <h3 class="orderGiftRange">input</h3>
-            <ul class="orderGiftList">
-                <li></li>
-            </ul>
-            <input type="hidden" name="jsonresult" value="1">
-            <input type="hidden" name="__EVENTARGUMENT" value="Action=RecalculateCart">
-            <input type="hidden" name="action" value="RecalculateCart">
-        </form>
-    </div>
+    <CartGift />
     {:else}
             <p>Žádné dárky</p>   
 {/if}

@@ -28,7 +28,20 @@ export interface CartItemProps {
         priceWithVatForCount: number;
     }[]
 }
-export interface CardDataProps {
+export interface CartGiftsProps {
+    IsEnabled: boolean;
+    MinOrderPriceWithVat: string;
+    MissingOrderPrice: string;
+    MissingOrderPriceNumber: number;
+    Products?: {
+        IDProduct: number;
+        IsSelected: boolean;
+        Name: string;
+        Picture: string;
+        Thumbnail: string
+    }
+}
+export interface CartDataProps {
     Cart_TotalPrice: {
         price: {
             Price: string;
@@ -43,7 +56,7 @@ export interface CardDataProps {
 export interface CartResultProps {
     result: boolean;
     data: {
-        Cart?: CardDataProps;
+        Cart?: CartDataProps;
         cartisempty?: boolean;
     }
 }

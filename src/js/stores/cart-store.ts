@@ -1,11 +1,11 @@
 import { writable } from 'svelte/store'
 import { clearCartAction, getCartAction, getGiftsAction, recalculateCartAction, removeCartItemAction } from '../actions/cart-actions'
-import { CardDataProps } from '../pages/cart/types'
+import { CartDataProps, CartGiftsProps } from '../pages/cart/types'
 import cashDom from 'cash-dom'
 
 
-export const cartGifts = writable<CardDataProps>(null)
-export const cartData = writable<CardDataProps>(null)
+export const cartGifts = writable<CartGiftsProps>(null)
+export const cartData = writable<CartDataProps>(null)
 export const loadingCart = writable<boolean>(false)
 
 // indikator nahravani kosiku
