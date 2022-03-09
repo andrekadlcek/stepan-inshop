@@ -109,6 +109,8 @@ const clearAll = (e) => {
                         {#each $cartGifts as item}
                                 <GiftLevel giftLevel={item}/>
                         {/each}
+                        <input type="hidden" name="action" value="addgift">
+                        <input name="ctl01$ctl30$ctl00$ctl00$ctl02$ctl04$ctl00$ctl00$ctl01$ctl02$ctl03$ctl01$replace" type="hidden" id="ctl01_ctl30_ctl00_ctl00_ctl02_ctl04_ctl00_ctl00_ctl01_ctl02_ctl03_ctl01_replace" value="1">
                     </form>
             </div>
         {/if}
