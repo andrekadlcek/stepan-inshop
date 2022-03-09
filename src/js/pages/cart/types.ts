@@ -1,4 +1,5 @@
 export interface CartItemProps {
+    AsGift: boolean;
     Cart_CatalogueNumber: string;
     CatalogueNumber: string;
     Count: string;

@@ -1,12 +1,20 @@
 <script type="ts">
+import { calculateGift } from "../../stores/cart-store";
+
 import { CartGiftItem } from "./types";
 export let item : CartGiftItem;
 export let IsEnabled : boolean;
+
 </script>
 
 
 
 <li>
-    <input type="radio" id="{item.IDProduct.toString()}" name="productid" value="{item.IDProduct}" disabled={!IsEnabled} >
+    <input type="radio" on:click="{calculateGift}" checked="{item.IsSelected}" id="{item.IDProduct.toString()}" name="productid" value="{item.IDProduct}" disabled={!IsEnabled} autocomplete="off" />
+    {#if item.Picture != ""}
+        <picture>
+            <img class="img-responsive ls-is-cached lazyloaded" src="{item.Picture}" alt="{item.Name}">
+        </picture>
+    {/if}
     <span class="name">{item.Name}</span>
 </li>

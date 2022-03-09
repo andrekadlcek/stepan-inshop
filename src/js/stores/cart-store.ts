@@ -34,6 +34,7 @@ export const recalculateCart = async () => {
     console.log(res);
     
     cartData.set(res.data.Cart)
+    getGifts()
 }
 
 export const removeItem = async (productID: number) => {
@@ -54,10 +55,18 @@ export const clearCart = async () =>{
 
 export const getGifts = async () =>{
     const res = await getGiftsAction();
-    console.log("res.data", res.data);
+    // console.log("res.data", res.data);
     
     cartGifts.set(res.data)
 
 }
 
 getGifts()
+
+export const calculateGift = async () => {
+    const giftData = cashDom('#orderGiftForm').serialize()
+    const res = await recalculateCartAction(giftData)
+    console.log(giftData);
+    
+    // cartData.set(res.data.Cart)
+}

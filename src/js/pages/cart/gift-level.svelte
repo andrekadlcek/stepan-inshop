@@ -7,12 +7,16 @@ export let giftLevel : CartGiftsProps;
 <h3 class="orderGiftRange">
     {#if !giftLevel.IsEnabled}
          Další dárky, přiobjednáte-li ještě za {giftLevel.MissingOrderPrice} 
+         {:else}
+        <p class="orderGiftMissingPrice">Vyberte si k Vašemu nákupu jeden z následujících dárků</p>
     {/if}
     <span>(min. objednávka: {giftLevel.MinOrderPriceWithVat})</span>
 </h3>
 
-<ul class="orderGiftList {!giftLevel.IsEnabled && 'disabled'}">
-    {#each giftLevel.Products as item}
-        <GiftItem item={item} IsEnabled={giftLevel.IsEnabled}  />
-    {/each}
-</ul>
+<!-- <form id="gift-form" action="/inshop/scripts/shop.aspx" method="post"> -->
+    <ul class="orderGiftList {!giftLevel.IsEnabled && 'disabled'}">
+        {#each giftLevel.Products as item}
+            <GiftItem item={item} IsEnabled={giftLevel.IsEnabled}  />
+        {/each}
+    </ul>
+<!-- </form> -->
