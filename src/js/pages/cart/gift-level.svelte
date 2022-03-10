@@ -13,10 +13,8 @@ export let giftLevel : CartGiftsProps;
     <span>(min. objednávka: {giftLevel.MinOrderPriceWithVat})</span>
 </h3>
 
-<!-- <form id="gift-form" action="/inshop/scripts/shop.aspx" method="post"> -->
     <ul class="orderGiftList {!giftLevel.IsEnabled && 'disabled'}">
         {#each giftLevel.Products as item}
             <GiftItem item={item} IsEnabled={giftLevel.IsEnabled}  />
         {/each}
     </ul>
-<!-- </form> -->

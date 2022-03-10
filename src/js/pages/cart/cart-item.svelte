@@ -1,43 +1,19 @@
 <script type="ts">
-import { useEffect } from "../../hooks/useeffect";
-import { recalculateCart, removeItem } from "../../stores/cart-store";
+import { removeItem } from "../../stores/cart-store";
+import ItemCounter from "../../pages/cart/cart-item-counter.svelte";
 
 import { CartItemProps } from "./types";
 export let item : CartItemProps;
-let timer;
-let count = item.count
 
 $ : {
   //  count = item.count;
 }
 
-// on change event
-const change = (event) => {
-        let _count
-        // obrana aby neslo vlozit negativni hodnoty
-        if(+event.target.value > 1){
-            _count = +event.target.value
-        }
-        else{
-            _count = 1
-        }
-
-        // timer aby se prepocital kosik po 0.7 sekund - scenar kdy zakaznik zada dvouciferne cislo aby neprepocitaval hned u prvniho
-        clearTimeout(timer);
-		timer = setTimeout(() => {
-            count = _count
-		}, 750);
-}
-
 const erase = (e) => {
     e.preventDefault()
-    console.log(`akce vymaze item id: ${item.IDProduct}`);   
+    // console.log(`akce vymaze item id: ${item.IDProduct}`);   
     removeItem(item.IDCartItem)
 }
- useEffect(() => {
-		return () => recalculateCart();
-	}, () => [count]);
-
 
 </script>
 
@@ -64,13 +40,12 @@ const erase = (e) => {
     <td class="product-price">
         <ul class="table-cells">
             <li class="unit-price view-price ">
-                {@html item.CustomerPriceWithVat}
-                <small>{@html item.CustomerPrice} (bez DPH)</small>
+                {#if item.AsGift == false}
+                    {@html item.CustomerPriceWithVat}
+                    <small>{@html item.CustomerPrice} (bez DPH)</small>
+                {/if}
             </li>
-            <li class="count">
-                <input bind:value={count} on:input="{change}" type=number name="CartItem_{item.IDCartItem}" id="CartItem_{item.IDCartItem}" autocomplete="off" class="form-control" >
-                ks
-            </li>
+                <ItemCounter item={item} />
             <li class="total-price view-price ">
                 <span class="PriceWithVatForRequiredAmount">{@html item.PriceWithVatForRequiredAmount}</span>
                 <small>{@html item.PriceForRequiredAmount} (bez DPH)</small>

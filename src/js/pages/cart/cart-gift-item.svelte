@@ -10,7 +10,7 @@ export let IsEnabled : boolean;
 
 
 <li>
-    <input type="radio" on:click="{calculateGift}" checked="{item.IsSelected}" id="{item.IDProduct.toString()}" name="productid" value="{item.IDProduct}" disabled={!IsEnabled} autocomplete="off" />
+    <input type="radio" on:click="{calculateGift}" checked="{item.IsSelected}" id="{item.IDProduct.toString()}" name="productid" value="{item.IDProduct}" disabled={!IsEnabled} />
     {#if item.Picture != ""}
         <picture>
             <img class="img-responsive ls-is-cached lazyloaded" src="{item.Picture}" alt="{item.Name}">

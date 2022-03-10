@@ -31,7 +31,7 @@ export const recalculateCart = async () => {
     const formData = cashDom('#cart-form').serialize()
     // k form data se pridavaji akce aby api poznalo ze jde o prepocet
     const res = await recalculateCartAction(formData)
-    console.log(res);
+    // console.log(res);
     
     cartData.set(res.data.Cart)
     getGifts()
@@ -44,6 +44,7 @@ export const removeItem = async (productID: number) => {
     if (res.result) {
         cartData.set(res.data.Cart)
     }
+    recalculateCart()
     
 }
 export const clearCart = async () =>{
@@ -65,8 +66,7 @@ getGifts()
 
 export const calculateGift = async () => {
     const giftData = cashDom('#orderGiftForm').serialize()
-    const res = await recalculateCartAction(giftData)
-    console.log(giftData);
-    
-    // cartData.set(res.data.Cart)
+    await recalculateCartAction(giftData);
+
+    recalculateCart()
 }
