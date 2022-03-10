@@ -15,13 +15,20 @@ const erase = (e) => {
     removeItem(item.IDCartItem)
 }
 
+let current = ""
+if (item.AsGift) {
+    current == "gift"
+} else {
+    current == ""
+}
+
 </script>
 
-<tr class="product-row">
+<tr class="{current === 'gift' ? 'product-row product-gift' : 'product-row'}">
     <td class="product-view">
         <ul class="table-cells">
             <li class="photo">
-                <img src="{item.photo}" alt="" />
+                <img src="{item.photo}" alt="{item.name}" />
             </li>
             <li class="name">
                 <a href="{item.url}" title="{item.name}">{item.name}</a>
