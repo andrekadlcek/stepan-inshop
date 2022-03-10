@@ -34,7 +34,15 @@ const increase = () => {
         return count++
 }
 }
+const decrease = () => {
+    const input = document.querySelector('#CartItem_' + CSS.escape(item.IDCartItem.toString()))
+    input.addEventListener('input', updateValue);
+    console.log(count--);
 
+    function updateValue() {
+        return count--
+}
+}
 useEffect(() => {
 		return () => recalculateCart();
 	}, () => [count]);
@@ -43,7 +51,7 @@ useEffect(() => {
 <li class="count">
     {#if item.AsGift == false}
         <div class="cart-counter--container">
-            <div class="cart-counter--arrow"><p>-</p></div>
+            <div on:click="{decrease}" class="cart-counter--arrow"><p>-</p></div>
                 <input bind:value={count} on:input="{inputSet}" type=number name="CartItem_{item.IDCartItem}" id="CartItem_{item.IDCartItem}" autocomplete="off" class="form-control cart-counter--input" >
             <div on:click="{increase}" class="cart-counter--arrow"><p>+</p></div>
         </div>
