@@ -26,22 +26,12 @@ const inputSet = (event) => {
 }
 
 const increase = () => {
-    const input = document.querySelector('#CartItem_' + CSS.escape(item.IDCartItem.toString()))
-    input.addEventListener('input', updateValue);
-    console.log(count++);
-
-    function updateValue() {
-        return count++
-}
+    count++
 }
 const decrease = () => {
-    const input = document.querySelector('#CartItem_' + CSS.escape(item.IDCartItem.toString()))
-    input.addEventListener('input', updateValue);
-    console.log(count--);
-
-    function updateValue() {
-        return count--
-}
+    if(count > 1){
+        count--
+    }
 }
 useEffect(() => {
 		return () => recalculateCart();
