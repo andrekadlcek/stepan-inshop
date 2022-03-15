@@ -9,14 +9,9 @@ let level
 if (giftLevel.IsEnabled) {
     level = giftLevel
 }
-
-console.log(level);
 </script>
 
-{#if groupGifts}
-    <p>group</p>
-    {:else}
-    <h3 class="orderGiftRange">
+ <h3 class="orderGiftRange">
         {#if !giftLevel.IsEnabled}
              Další dárky, přiobjednáte-li ještě za {giftLevel.MissingOrderPrice} 
              {:else}
@@ -30,4 +25,3 @@ console.log(level);
             <GiftItem item={item} IsEnabled={giftLevel.IsEnabled}  />
         {/each}
     </ul>
-{/if}
