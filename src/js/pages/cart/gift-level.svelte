@@ -1,17 +1,12 @@
 <script type="ts">
-import { CartGiftsProps } from "./types";
+import { CartGiftContentProps } from "./types";
 import GiftItem from './cart-gift-item.svelte'
-export let giftLevel : CartGiftsProps;
+export let giftLevel : CartGiftContentProps;
 
-const groupGifts = true
-let level
 
-if (giftLevel.IsEnabled) {
-    level = giftLevel
-}
 </script>
 
- <h3 class="orderGiftRange">
+ <!-- <h3 class="orderGiftRange">
         {#if !giftLevel.IsEnabled}
              Další dárky, přiobjednáte-li ještě za {giftLevel.MissingOrderPrice} 
              {:else}
@@ -24,4 +19,4 @@ if (giftLevel.IsEnabled) {
         {#each giftLevel.Products as item}
             <GiftItem item={item} IsEnabled={giftLevel.IsEnabled}  />
         {/each}
-    </ul>
+    </ul> -->

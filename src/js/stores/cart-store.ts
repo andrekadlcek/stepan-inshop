@@ -1,10 +1,10 @@
 import { writable } from 'svelte/store'
 import { clearCartAction, getCartAction, getGiftsAction, recalculateCartAction, removeCartItemAction } from '../actions/cart-actions'
-import { CartDataProps, CartGiftsProps } from '../pages/cart/types'
+import { CartDataProps, CartGiftContentProps } from '../pages/cart/types'
 import cashDom from 'cash-dom'
 
 
-export const cartGifts = writable<CartGiftsProps[]>(null)
+export const cartGifts = writable<CartGiftContentProps[]>(null)
 export const cartData = writable<CartDataProps>(null)
 export const loadingCart = writable<boolean>(false)
 
@@ -56,8 +56,9 @@ export const clearCart = async () =>{
 
 export const getGifts = async () =>{
     const res = await getGiftsAction();
-    cartGifts.set(res.data.levels)
-
+    cartGifts.set(res.data)
+    console.log(res.data);
+    
 }
 
 getGifts()

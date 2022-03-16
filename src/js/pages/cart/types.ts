@@ -30,21 +30,6 @@ export interface CartItemProps {
     }[]
 }
 
-export interface CartGiftItem {
-    IDProduct: number;
-    IsSelected: boolean;
-    Name: string;
-    Picture: string;
-    Thumbnail: string
-}
-
-export interface CartGiftsProps {
-    IsEnabled: boolean;
-    MinOrderPriceWithVat: string;
-    MissingOrderPrice: string;
-    MissingOrderPriceNumber: number;
-    Products?: CartGiftItem[]
-}
 export interface CartDataProps {
     Cart_TotalPrice: {
         price: {
@@ -63,4 +48,34 @@ export interface CartResultProps {
         Cart?: CartDataProps;
         cartisempty?: boolean;
     }
+}
+export interface CartGiftsConfigsProps {
+    subtitleenabled: boolean;
+    titleenabled: boolean;
+}
+export interface CartGiftsTextProps {
+    OrderGift_Title: string;
+    OrderGift_subtitle_InCart_Change: string;
+    OrderGift_subtitle_InCart_OnlyOne: string;
+    OrderGift_subtitle_NotInCart: string;
+    OrderGift_subtitle_SmallOrder: string;
+}
+export interface CartGiftsLevelsProps {
+    IsEnabled: boolean;
+    MinOrderPriceWithVat: string;
+    MissingOrderPrice: string;
+    MissingOrderPriceNumber: number;
+    Products?: CartGiftItem[]
+}
+export interface CartGiftItem {
+    IDProduct: number;
+    IsSelected: boolean;
+    Name: string;
+    Picture: string;
+    Thumbnail: string
+}
+export interface CartGiftContentProps {
+    configs?: CartGiftsConfigsProps[];
+    gettext?: CartGiftsTextProps[];
+    levels?: CartGiftsLevelsProps[];
 }
