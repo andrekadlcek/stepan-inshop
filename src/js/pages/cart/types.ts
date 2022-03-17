@@ -75,7 +75,7 @@ export interface CartGiftItem {
     Thumbnail: string
 }
 export interface CartGiftContentProps {
-    configs?: CartGiftsConfigsProps[];
-    gettext?: CartGiftsTextProps[];
+    configs?: CartGiftsConfigsProps;
+    gettext?: CartGiftsTextProps;
     levels?: CartGiftsLevelsProps[];
 }
