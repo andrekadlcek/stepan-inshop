@@ -27,7 +27,7 @@ console.log(slectedGift);
 
  <h3 class="orderGiftRange">
     {#if !giftLevel.IsEnabled}
-            Další dárky, přiobjednáte-li ještě za {giftLevel.MissingOrderPrice}
+            <p class="orderGiftMissingPrice">{$cartGifts.gettext.OrderGift_subtitle_SmallOrder.replace('{MissingOrderPrice}', giftLevel.MissingOrderPrice)}</p>
             {:else}
             Dostupné dárky
     {/if}
