@@ -4,7 +4,7 @@ import { CartDataProps, CartGiftContentProps } from '../pages/cart/types'
 import cashDom from 'cash-dom'
 
 
-export const cartGifts = writable<CartGiftContentProps[]>(null)
+export const cartGifts = writable<CartGiftContentProps>(null)
 export const cartData = writable<CartDataProps>(null)
 export const loadingCart = writable<boolean>(false)
 

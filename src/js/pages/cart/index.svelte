@@ -1,7 +1,11 @@
 <script type="ts">
 import CartItem from './cart-item.svelte'
-import { cartData, clearCart, cartGifts, loadingCart } from "../../stores/cart-store";
+import { cartData, cartGifts, clearCart, loadingCart } from "../../stores/cart-store";
 import GiftLevel from './gift-level.svelte'
+
+// povolení zobrazení dárků
+let giftsEnabled = true;
+console.log($cartGifts);
 
 const clearAll = (e) => {
     e.preventDefault()
@@ -97,19 +101,20 @@ const clearAll = (e) => {
     </tr>
 </form>
 
-        {#if $cartGifts}
+        {#if $cartGifts && giftsEnabled}
              <div id="OrderGift">
-                    <h2>Váš dárek</h2>
-                    {#if $cartGifts.configs.subtitleenabled}
-                          <!-- <p class="orderGiftMissingPrice">Přidáte-li do košíku ještě další zboží za {$cartGifts[0].MissingOrderPrice}, můžete získat bezplatný dárek</p> -->
-                          <p>test</p>
-                          {:else}
-                          <p>nejde to</p>
+                    {#if $cartGifts.configs.titleenabled}
+                        <h2>{$cartGifts.gettext.OrderGift_Title}</h2>    
+                    {/if}
+                    {#if !$cartGifts.levels[0].IsEnabled}
+                          <p class="orderGiftMissingPrice">{$cartGifts.gettext.OrderGift_subtitle_SmallOrder.slice(0, 42) + $cartGifts.levels[0].MissingOrderPrice + $cartGifts.gettext.OrderGift_subtitle_SmallOrder.slice(61, 100)}</p>
+                          {:else if $cartGifts.levels[0].IsEnabled}
+                          <p class="orderGiftMissingPrice">Vyberte si svůj dárek k objednávce</p>
                     {/if}
                    
 
                     <form id="orderGiftForm" action="/inshop/scripts/shop.aspx?action=addgift">
-                        {#each $cartGifts as item}
+                        {#each $cartGifts.levels as item}
                                 <GiftLevel giftLevel={item}/>
                         {/each}
                         <input type="hidden" name="action" value="addgift">
