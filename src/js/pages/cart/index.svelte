@@ -5,7 +5,6 @@ import GiftLevel from './gift-level.svelte'
 
 // povolení zobrazení dárků
 let giftsEnabled = true;
-console.log($cartGifts);
 
 const clearAll = (e) => {
     e.preventDefault()
