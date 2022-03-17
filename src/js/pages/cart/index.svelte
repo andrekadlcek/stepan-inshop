@@ -100,11 +100,8 @@ const clearAll = (e) => {
         {#if $cartGifts}
              <div id="OrderGift">
                     <h2>Váš dárek</h2>
-                    {#if $cartGifts.configs.subtitleenabled}
-                          <!-- <p class="orderGiftMissingPrice">Přidáte-li do košíku ještě další zboží za {$cartGifts[0].MissingOrderPrice}, můžete získat bezplatný dárek</p> -->
-                          <p>test</p>
-                          {:else}
-                          <p>nejde to</p>
+                    {#if !$cartGifts[0].IsEnabled}
+                          <p class="orderGiftMissingPrice">Přidáte-li do košíku ještě další zboží za {$cartGifts[0].MissingOrderPrice}, můžete získat bezplatný dárek</p>
                     {/if}
                    
 
