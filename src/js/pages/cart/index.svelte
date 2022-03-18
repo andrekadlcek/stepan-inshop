@@ -1,6 +1,6 @@
 <script type="ts">
 import CartItem from './cart-item.svelte'
-import { cartData, cartGifts, clearCart, loadingCart } from "../../stores/cart-store";
+import { cartData, cartGifts, cartStrings, clearCart, loadingCart } from "../../stores/cart-store";
 import GiftLevel from './gift-level.svelte'
 
 // povolení zobrazení dárků
@@ -14,7 +14,7 @@ const clearAll = (e) => {
 </script>
 
 <div class="page-header">
-    <h1>Košík</h1>
+    <h1>{$cartStrings.Cart_Title}</h1>
 </div>
 
     {#if $loadingCart}
