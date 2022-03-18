@@ -1,14 +1,14 @@
 <script type="ts">
 import { CartGiftContentProps, CartGiftsLevelsProps } from "./types";
 import GiftItem from './cart-gift-item.svelte'
-import { cartGifts } from "../../stores/cart-store";
+import { cartGifts, cartStrings } from "../../stores/cart-store";
 export let giftLevel : CartGiftsLevelsProps;
 
 </script>
 
  <h3 class="orderGiftRange">
     {#if !giftLevel.IsEnabled}
-            <p class="orderGiftMissingPrice">{$cartGifts.gettext.OrderGift_subtitle_SmallOrder.replace('{MissingOrderPrice}', giftLevel.MissingOrderPrice)}</p>
+            <p class="orderGiftMissingPrice">{$cartStrings.OrderGift_subtitle_SmallOrder.replace('{MissingOrderPrice}', giftLevel.MissingOrderPrice)}</p>
             {:else}
             Dostupné dárky
     {/if}

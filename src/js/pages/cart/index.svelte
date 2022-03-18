@@ -103,14 +103,14 @@ const clearAll = (e) => {
         {#if $cartGifts && giftsEnabled}
              <div id="OrderGift">
                     {#if $cartGifts.configs.titleenabled}
-                        <h2>{$cartGifts.gettext.OrderGift_Title}</h2>    
+                        <h2>{$cartStrings.OrderGift_Title}</h2>    
                     {/if}
                     {#if !$cartGifts.levels[0].IsEnabled}
-                          <p class="orderGiftMissingPrice">{$cartGifts.gettext.OrderGift_subtitle_SmallOrder.replace('{MissingOrderPrice}', $cartGifts.levels[0].MissingOrderPrice)}</p>
+                          <p class="orderGiftMissingPrice">{$cartStrings.OrderGift_subtitle_SmallOrder.replace('{MissingOrderPrice}', $cartGifts.levels[0].MissingOrderPrice)}</p>
                           {:else if $cartGifts.configs.IsOrderGiftInCart}
-                          <p class="orderGiftMissingPrice">{$cartGifts.gettext.OrderGift_subtitle_InCart_Change}</p>
+                          <p class="orderGiftMissingPrice">{$cartStrings.OrderGift_subtitle_InCart_Change}</p>
                           {:else if $cartGifts.levels[0].IsEnabled}
-                          <p class="orderGiftMissingPrice">{$cartGifts.gettext.OrderGift_subtitle_NotInCart}</p>
+                          <p class="orderGiftMissingPrice">{$cartStrings.OrderGift_subtitle_NotInCart}</p>
                     {/if}
                    
 
@@ -127,6 +127,6 @@ const clearAll = (e) => {
        
 
         {:else}
-            <p>Košík je prázdny</p>
+            <p>{$cartStrings.Cart_Empty}</p>
         {/if}
     {/if}

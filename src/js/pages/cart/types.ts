@@ -54,13 +54,6 @@ export interface CartGiftsConfigsProps {
     subtitleenabled: boolean;
     titleenabled: boolean;
 }
-export interface CartGiftsTextProps {
-    OrderGift_Title: string;
-    OrderGift_subtitle_InCart_Change: string;
-    OrderGift_subtitle_InCart_OnlyOne: string;
-    OrderGift_subtitle_NotInCart: string;
-    OrderGift_subtitle_SmallOrder: string;
-}
 export interface CartGiftsLevelsProps {
     IsEnabled: boolean;
     MinOrderPriceWithVat: string;
@@ -77,7 +70,6 @@ export interface CartGiftItem {
 }
 export interface CartGiftContentProps {
     configs?: CartGiftsConfigsProps;
-    gettext?: CartGiftsTextProps;
     levels?: CartGiftsLevelsProps[];
 }
 export interface CartStringsProps {
@@ -94,5 +86,11 @@ export interface CartStringsProps {
     Cart_TotalPriceSum: string;
     Cart_Unit_Price: string;
     LoyaltyCart_UsedPointsInThisOrderLabel: string;
-    PackShortcut: string
+    PackShortcut: string;
+    OrderGift_Title: string;
+    OrderGift_subtitle_InCart_Change: string;
+    OrderGift_subtitle_InCart_OnlyOne: string;
+    OrderGift_subtitle_NotInCart: string;
+    OrderGift_subtitle_SmallOrder: string;
+    Cart_Empty: string;
 }
