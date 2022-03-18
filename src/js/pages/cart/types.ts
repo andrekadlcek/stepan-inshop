@@ -82,7 +82,10 @@ export interface CartGiftContentProps {
 }
 export interface CartStringsProps {
     Cart_CatalogueNumber: string;
+    Cart_Checkout: string;
+    Cart_Continue: string;
     Cart_Count: string;
+    Cart_DeleteAll: string;
     Cart_Name: string;
     Cart_PriceWithoutTax: string;
     Cart_SumPriceWithoutTax: string;

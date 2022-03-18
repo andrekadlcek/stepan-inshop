@@ -53,10 +53,10 @@ const clearAll = (e) => {
                 <td colspan="3">
                     <div class="nav-buttons">
                         <div class="button CartContinue">
-                            <a href="/" class="btn large labeled"><i class="label icon ico icon-preview"></i> Pokračovat v nákupu </a>
+                            <a href="/" class="btn large labeled"><i class="label icon ico icon-preview"></i> {$cartStrings.Cart_Continue} </a>
                         </div>
                         <div class="button CartDeleteAll">
-                            <button on:click="{clearAll}" class="btn large labeled"><i class="label icon ico icon-trash"></i> Smazat košík</button>
+                            <button on:click="{clearAll}" class="btn large labeled"><i class="label icon ico icon-trash"></i> {$cartStrings.Cart_DeleteAll} </button>
                         </div>
                     </div>
                 </td>
@@ -94,7 +94,7 @@ const clearAll = (e) => {
     <tr class="checkout checkout-tr-button">
         <td colspan="3">
             <div class="checkout-button">
-                <button class="btn xlarge btn-primary labeled labeled-right"><i class="label icon ico icon-next"></i> Přejít do pokladny</button><input name="action" type="hidden" value="ShowCheckout">
+                <button class="btn xlarge btn-primary labeled labeled-right"><i class="label icon ico icon-next"></i> {$cartStrings.Cart_Checkout}</button><input name="action" type="hidden" value="ShowCheckout">
             </div>
         </td>
     </tr>
