@@ -29,15 +29,15 @@ const clearAll = (e) => {
                     <ul class="table-cells">
                         <li class="photo"></li>
                         <li class="name">
-                            Název
+                            {$cartStrings.Cart_Name}
                         </li>
                     </ul>
                 </td>
                 <td class="product-price">
                     <ul class="table-cells">
-                        <li class="unit-price view-price">Jednotková cena</li>
-                        <li class="unit-price view-price">Počet</li>
-                        <li class="unit-price view-price">Celková cena</li>
+                        <li class="unit-price view-price">{$cartStrings.Cart_Unit_Price}</li>
+                        <li class="unit-price view-price">{$cartStrings.Cart_Count}</li>
+                        <li class="unit-price view-price">{$cartStrings.Cart_TotalPriceSum}</li>
                     </ul>
                 </td>
                 <td class="product-remove">
@@ -68,14 +68,14 @@ const clearAll = (e) => {
                     <ul class="table-cells">
                         <li class="unit-price view-price">
                             <h3>
-                                Cena nákupu:
+                                {$cartStrings.Cart_TotalPrice}
                             </h3>
                         </li>
                         <li class="total-price view-price">
                                 <span class="Cart_TotalPrice-PriceWithVat">{@html $cartData.Cart_TotalPrice.price.PriceWithVat}</span>
                                     
                                     <small>
-                                        <span class="Cart_TotalPrice-Price">{@html $cartData.Cart_TotalPrice.price.Price}</span> (Celkem bez DPH)
+                                        <span class="Cart_TotalPrice-Price">{@html $cartData.Cart_TotalPrice.price.Price}</span> ({$cartStrings.Cart_TotalPrice})
                                     </small>
                         </li>
                     </ul>

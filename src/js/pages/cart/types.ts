@@ -80,3 +80,16 @@ export interface CartGiftContentProps {
     gettext?: CartGiftsTextProps;
     levels?: CartGiftsLevelsProps[];
 }
+export interface CartStringsProps {
+    Cart_CatalogueNumber: string;
+    Cart_Count: string;
+    Cart_Name: string;
+    Cart_PriceWithoutTax: string;
+    Cart_SumPriceWithoutTax: string;
+    Cart_Title: string;
+    Cart_TotalPrice: string;
+    Cart_TotalPriceSum: string;
+    Cart_Unit_Price: string;
+    LoyaltyCart_UsedPointsInThisOrderLabel: string;
+    PackShortcut: string
+}

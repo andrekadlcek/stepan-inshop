@@ -1,5 +1,5 @@
 <script type="ts">
-import { removeItem } from "../../stores/cart-store";
+import { cartStrings, removeItem } from "../../stores/cart-store";
 import ItemCounter from "../../pages/cart/cart-item-counter.svelte";
 
 import { CartItemProps } from "./types";
@@ -42,13 +42,13 @@ const erase = (e) => {
             <li class="unit-price view-price ">
                 {#if item.AsGift == false}
                     {@html item.CustomerPriceWithVat}
-                    <small>{@html item.CustomerPrice} (bez DPH)</small>
+                    <small>{@html item.CustomerPrice} ({$cartStrings.Cart_PriceWithoutTax})</small>
                 {/if}
             </li>
                 <ItemCounter item={item} />
             <li class="total-price view-price ">
                 <span class="PriceWithVatForRequiredAmount">{@html item.PriceWithVatForRequiredAmount}</span>
-                <small>{@html item.PriceForRequiredAmount} (bez DPH)</small>
+                <small>{@html item.PriceForRequiredAmount} ({$cartStrings.Cart_PriceWithoutTax})</small>
             </li>
         </ul>
     </td>
