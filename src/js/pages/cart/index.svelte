@@ -107,8 +107,10 @@ const clearAll = (e) => {
                     {/if}
                     {#if !$cartGifts.levels[0].IsEnabled}
                           <p class="orderGiftMissingPrice">{$cartGifts.gettext.OrderGift_subtitle_SmallOrder.replace('{MissingOrderPrice}', $cartGifts.levels[0].MissingOrderPrice)}</p>
+                          {:else if $cartGifts.configs.IsOrderGiftInCart}
+                          <p class="orderGiftMissingPrice">{$cartGifts.gettext.OrderGift_subtitle_InCart_Change}</p>
                           {:else if $cartGifts.levels[0].IsEnabled}
-                          <p class="orderGiftMissingPrice">Vyberte si svůj dárek k objednávce</p>
+                          <p class="orderGiftMissingPrice">{$cartGifts.gettext.OrderGift_subtitle_NotInCart}</p>
                     {/if}
                    
 

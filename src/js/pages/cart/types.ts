@@ -50,6 +50,7 @@ export interface CartResultProps {
     }
 }
 export interface CartGiftsConfigsProps {
+    IsOrderGiftInCart: boolean;
     subtitleenabled: boolean;
     titleenabled: boolean;
 }
