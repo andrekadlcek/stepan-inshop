@@ -85,7 +85,9 @@ export interface CartStringsProps {
     Cart_TotalPrice: string;
     Cart_TotalPriceSum: string;
     Cart_Unit_Price: string;
+    IsHigherThanMinimalprice: boolean;
     LoyaltyCart_UsedPointsInThisOrderLabel: string;
+    MinimalPriceText: string;
     PackShortcut: string;
     OrderGift_Title: string;
     OrderGift_subtitle_InCart_Change: string;
