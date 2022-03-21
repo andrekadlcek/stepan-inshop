@@ -1,7 +1,8 @@
 <script type="ts">
 import CartItem from './cart-item.svelte'
-import { cartData, cartGifts, cartStrings, clearCart, loadingCart } from "../../stores/cart-store";
+import { completeData, cartData, cartGifts, cartStrings, clearCart, loadingCart } from "../../stores/cart-store";
 import GiftLevel from './gift-level.svelte'
+import ErrorAlert from './error-alert.svelte'
 
 // povolení zobrazení dárků
 let giftsEnabled = true;
@@ -20,7 +21,7 @@ const clearAll = (e) => {
     {#if $loadingCart}
         <p>Pracuji</p>
     {:else}
-        {#if $cartData}
+{#if $cartData}
 <form id="cart-form" action="/inshop/scripts/shop.aspx" method="post">
     <table class="cart-list">
         <tbody>
@@ -75,7 +76,7 @@ const clearAll = (e) => {
                                 <span class="Cart_TotalPrice-PriceWithVat">{@html $cartData.Cart_TotalPrice.price.PriceWithVat}</span>
                                     
                                     <small>
-                                        <span class="Cart_TotalPrice-Price">{@html $cartData.Cart_TotalPrice.price.Price}</span> ({$cartStrings.Cart_TotalPrice})
+                                        <span class="Cart_TotalPrice-Price">{@html $cartData.Cart_TotalPrice.price.Price}</span> ({$cartStrings.Cart_SumPriceWithoutTax})
                                     </small>
                         </li>
                     </ul>
@@ -87,6 +88,9 @@ const clearAll = (e) => {
                 </td>
             </tr>
         </tbody>
+        {#if !$completeData.result}
+            <ErrorAlert  />
+        {/if}
         {#if $cartStrings.IsHigherThanMinimalprice}
             <tr class="checkout checkout-tr-button">
                 <td colspan="3">

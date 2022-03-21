@@ -41,7 +41,12 @@ export interface CartDataProps {
     }
     items: CartItemProps[]
 }
-
+export interface CartCompleteDataProps {
+    Data?: CartDataProps[];
+    error: string;
+    msgcode: string;
+    result: boolean
+}
 export interface CartResultProps {
     result: boolean;
     data: {

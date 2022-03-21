@@ -1,10 +1,11 @@
 import { writable } from 'svelte/store'
 import { clearCartAction, getCartAction, getGiftsAction, recalculateCartAction, removeCartItemAction } from '../actions/cart-actions'
-import { CartDataProps, CartGiftContentProps, CartStringsProps } from '../pages/cart/types'
+import { CartCompleteDataProps, CartDataProps, CartGiftContentProps, CartStringsProps } from '../pages/cart/types'
 import cashDom from 'cash-dom'
 
 
 export const cartGifts = writable<CartGiftContentProps>(null)
+export const completeData = writable<CartCompleteDataProps>(null)
 export const cartData = writable<CartDataProps>(null)
 export const loadingCart = writable<boolean>(false)
 export const cartStrings = writable<CartStringsProps>((window as any).cartStrings)
@@ -13,6 +14,12 @@ export const cartStrings = writable<CartStringsProps>((window as any).cartString
 const setCartLoading = (data: boolean) => {
     loadingCart.set(data)
 }
+const getCompleteCartData = async () => {
+    const res = await getCartAction()
+    completeData.set(res)
+    console.log(res);
+}
+getCompleteCartData()
 // funkce pro nacteni stavu kosiku
 const getCartData = async () => {
     setCartLoading(true)
@@ -20,7 +27,7 @@ const getCartData = async () => {
     if (res.result && !res.data.cartisempty) {
         // setter pro vlozeni dat do cartData 
         cartData.set(res.data.Cart)
-    }
+    }    
     setCartLoading(false)
 }
 
@@ -35,6 +42,7 @@ export const recalculateCart = async () => {
     // console.log(res);
     
     cartData.set(res.data.Cart)
+    completeData.set(res)    
     getGifts()
 }
 
@@ -58,7 +66,7 @@ export const clearCart = async () =>{
 export const getGifts = async () =>{
     const res = await getGiftsAction();
     cartGifts.set(res.data)
-    console.log(res.data);
+    // console.log(res.data);
     
 }
 
