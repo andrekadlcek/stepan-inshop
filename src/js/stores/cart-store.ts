@@ -20,6 +20,7 @@ const getCompleteCartData = async () => {
     console.log(res);
 }
 getCompleteCartData()
+
 // funkce pro nacteni stavu kosiku
 const getCartData = async () => {
     setCartLoading(true)

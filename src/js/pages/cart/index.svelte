@@ -89,7 +89,7 @@ const clearAll = (e) => {
             </tr>
         </tbody>
         {#if !$completeData.result}
-            <ErrorAlert  />
+            <ErrorAlert showModal={true} />
         {/if}
         {#if $cartStrings.IsHigherThanMinimalprice}
             <tr class="checkout checkout-tr-button">
