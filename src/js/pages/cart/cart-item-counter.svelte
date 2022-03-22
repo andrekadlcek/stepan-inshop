@@ -36,6 +36,10 @@ const decrease = () => {
 useEffect(() => {
 		return () => recalculateCart();
 	}, () => [count]);
+
+useEffect(() => {
+		count = item.count
+	}, () => [item]);
 </script>
 
 <li class="count">
