@@ -1,23 +1,18 @@
 <script type="ts">
 
 import { completeData, recalculateCart } from '../../stores/cart-store'
-export let showModal;
 
-const closeModal = () => {
-    showModal = false
-    recalculateCart()
-}
+export let showModal = false;
 </script>
 
-<!-- Na to gray pozadí bychom mohli dát nějaký onclick event který to zavře aby set o nemuselo dělat jen křížkem -->
 {#if showModal}
-    <div class="modal fade show" id="add2cartmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true" role="dialog">
+    <div class="modal fade show" id="add2cartmodal" on:click|self>
         <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
             <h3 class="modal-title" style="">{$completeData.error}</h3>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <div on:click={closeModal}>X</div>
+                <div on:click|self>X</div>
             </button>
             </div>
         </div>

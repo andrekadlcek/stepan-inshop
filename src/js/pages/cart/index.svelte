@@ -12,6 +12,10 @@ const clearAll = (e) => {
     clearCart()
 }
 
+let showModal = false;
+const toggleModal = () => {
+    showModal = !showModal;
+}
 </script>
 
 <div class="page-header">
@@ -89,7 +93,7 @@ const clearAll = (e) => {
             </tr>
         </tbody>
         {#if !$completeData.result}
-            <ErrorAlert showModal={true} />
+            <ErrorAlert {showModal} on:click={toggleModal} />
         {/if}
         {#if $cartStrings.IsHigherThanMinimalprice}
             <tr class="checkout checkout-tr-button">
