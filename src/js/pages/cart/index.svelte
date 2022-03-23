@@ -12,7 +12,7 @@ const clearAll = (e) => {
     clearCart()
 }
 
-let showModal = false;
+let showModal = true;
 const toggleModal = () => {
     showModal = !showModal;
 }
@@ -93,6 +93,7 @@ const toggleModal = () => {
             </tr>
         </tbody>
         {#if !$completeData.result}
+        <!-- Onclick nedává smysl. V podmínce ověřit zda není v complete data error a popř změnit hodnotu toggleModal (asi celé trochu upraivt) -->
             <ErrorAlert {showModal} on:click={toggleModal} />
         {/if}
         {#if $cartStrings.IsHigherThanMinimalprice}
