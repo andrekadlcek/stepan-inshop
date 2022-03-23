@@ -8,6 +8,8 @@ export const cartGifts = writable<CartGiftContentProps>(null)
 export const completeData = writable<CartCompleteDataProps>(null)
 export const cartData = writable<CartDataProps>(null)
 export const loadingCart = writable<boolean>(false)
+export const openError = writable<boolean>(false)
+export const errorMessage = writable<string>(null)
 export const cartStrings = writable<CartStringsProps>((window as any).cartStrings)
 
 // indikator nahravani kosiku
@@ -40,8 +42,11 @@ export const recalculateCart = async () => {
     const formData = cashDom('#cart-form').serialize()
     // k form data se pridavaji akce aby api poznalo ze jde o prepocet
     const res = await recalculateCartAction(formData)
-    // console.log(res);
     
+    if (!res.result){
+        openError.set(true)
+        errorMessage.set(res.error)
+    }
     cartData.set(res.data.Cart)
     completeData.set(res)    
     getGifts()

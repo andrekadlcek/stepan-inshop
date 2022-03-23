@@ -2,10 +2,10 @@
 
 import Item from '../cart/header-cart-item.svelte'
 import { completeData, cartData, cartGifts, cartStrings, clearCart, loadingCart } from "../../stores/cart-store";
-
 </script>
 
-
+{#if $cartData}
+     
 <a href="/inshop/scripts/shop.aspx?action=showshoppingcart" class="inner bdr">
     <div class="is-icon icon-cart bdr">  </div> <!-- icon -->
     <div class="summary">
@@ -38,3 +38,4 @@ import { completeData, cartData, cartGifts, cartStrings, clearCart, loadingCart 
         <a class="btn btn-primary large" href="/inshop/scripts/shop.aspx?action=showshoppingcart"><span>{$cartStrings.Cart_Title}</span></a>
     </div> <!-- go2cart -->
 </div> <!-- cart-preview -->
+{/if}

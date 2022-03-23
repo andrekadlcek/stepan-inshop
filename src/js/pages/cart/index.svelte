@@ -92,9 +92,7 @@ const toggleModal = () => {
                 </td>
             </tr>
         </tbody>
-        {#if !$completeData.result}
-            <ErrorAlert {showModal} on:click={toggleModal} />
-        {/if}
+      
         {#if $cartStrings.IsHigherThanMinimalprice}
             <tr class="checkout checkout-tr-button">
                 <td colspan="3">
@@ -115,7 +113,7 @@ const toggleModal = () => {
     <input type="hidden" name="__EVENTARGUMENT" value="Action=RecalculateCart">
     <input type="hidden" name="action" value="RecalculateCart">
 </form>
-
+     <ErrorAlert />
         {#if $cartGifts && giftsEnabled}
              <div id="OrderGift">
                     {#if $cartGifts.configs.titleenabled}

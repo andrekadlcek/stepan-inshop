@@ -22,20 +22,27 @@ const inputSet = (event) => {
         clearTimeout(timer);
 		timer = setTimeout(() => {
             count = _count
+            setTimeout(() => {
+                recalculateCart();
+            }, 200)
 		}, 750);
 }
 
 const increase = () => {
     count++
+    setTimeout(() => {
+        recalculateCart();
+    }, 200)
+    
 }
 const decrease = () => {
     if(count > 1){
         count--
+        setTimeout(() => {
+        recalculateCart();
+    }, 200)
     }
 }
-useEffect(() => {
-		return () => recalculateCart();
-	}, () => [count]);
 
 useEffect(() => {
 		count = item.count
