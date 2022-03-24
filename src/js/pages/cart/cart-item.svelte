@@ -11,7 +11,6 @@ $ : {
 
 const erase = (e) => {
     e.preventDefault()
-    // console.log(`akce vymaze item id: ${item.IDProduct}`);   
     removeItem(item.IDCartItem)
 }
 

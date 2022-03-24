@@ -1,7 +1,15 @@
 <script type="ts">
+import { removeItem } from "../../stores/cart-store";
+
 
 import { CartItemProps } from "./types";
 export let item : CartItemProps;
+
+const erase = (e) => {
+    e.preventDefault()
+    removeItem(item.IDCartItem)
+}
+
 </script>
 
 <tr class="header-cart-preview">
@@ -12,10 +20,10 @@ export let item : CartItemProps;
         {item.name}        
         <br>
         <strong>
-            {item.PriceWithVatForRequiredAmount}
+            {@html item.PriceWithVatForRequiredAmount}
         </strong> 
     </td>
     <td class="remove">
-        <a href="scripts/shop.aspx?action=deletecartitem&amp;IDCartItem=256"><i class="text-icon icon-remove"></i></a> 
+        <a on:click="{erase}" href="/#"><i class="text-icon icon-remove"></i></a> 
     </td>
 </tr>

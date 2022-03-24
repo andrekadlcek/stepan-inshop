@@ -13,7 +13,7 @@ import { completeData, cartData, cartStrings } from "../../stores/cart-store";
         <span class="monitor">
             <strong>{$cartStrings.Cart_Title}</strong>
             <span id="headerCartCount">{$cartData.items.filter(i => i).length}</span> kusů
-            <span id="headerCartPrice" class="price">{$cartData.Cart_TotalPrice.price.PriceWithVat}</span>
+            <span id="headerCartPrice" class="price">{@html $cartData.Cart_TotalPrice.price.PriceWithVat}</span>
         </span>
         <span class="device"><strong>{$cartData.items.filter(i => i).length}</strong></span>
     </div> <!-- summary -->
@@ -29,9 +29,9 @@ import { completeData, cartData, cartStrings } from "../../stores/cart-store";
         <tr>
             <td></td>
             <td class="summprice" colspan="2">
-                <span id="cartHeaderSummprice">{$cartData.Cart_TotalPrice.price.PriceWithVat}</span>
+                <span id="cartHeaderSummprice">{@html $cartData.Cart_TotalPrice.price.PriceWithVat}</span>
                 <small>
-                    <span id="cartHeaderSummpriceWithoutVat">{$cartData.Cart_TotalPrice.price.Price}</span> ({$cartStrings.Cart_SumPriceWithoutTax})
+                    <span id="cartHeaderSummpriceWithoutVat">{@html $cartData.Cart_TotalPrice.price.Price}</span> ({$cartStrings.Cart_SumPriceWithoutTax})
                 </small>
             </td>
         </tr>
