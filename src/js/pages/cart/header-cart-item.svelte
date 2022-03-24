@@ -1,19 +1,18 @@
 <script type="ts">
 
+import { CartItemProps } from "./types";
+export let item : CartItemProps;
 </script>
 
 <tr class="header-cart-preview">
     <td class="count">
-        (3x)
+        {item.Count}
     </td>
     <td class="product">
-        BAUME &amp; MERCIER Linea 10008
-        
+        {item.name}        
         <br>
         <strong>
-            
-                    97&nbsp;662&nbsp;Kč
-                    
+            {item.PriceWithVatForRequiredAmount}
         </strong> 
     </td>
     <td class="remove">

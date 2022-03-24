@@ -1,7 +1,8 @@
 <script type="ts">
 
 import Item from '../cart/header-cart-item.svelte'
-import { completeData, cartData, cartGifts, cartStrings, clearCart, loadingCart } from "../../stores/cart-store";
+import { completeData, cartData, cartStrings } from "../../stores/cart-store";
+
 </script>
 
 {#if $cartData}
@@ -11,16 +12,18 @@ import { completeData, cartData, cartGifts, cartStrings, clearCart, loadingCart 
     <div class="summary">
         <span class="monitor">
             <strong>{$cartStrings.Cart_Title}</strong>
-            <span id="headerCartCount">2</span> kusů
+            <span id="headerCartCount">{$cartData.items.filter(i => i).length}</span> kusů
             <span id="headerCartPrice" class="price">{$cartData.Cart_TotalPrice.price.PriceWithVat}</span>
         </span>
-        <span class="device"><strong>2</strong></span>
+        <span class="device"><strong>{$cartData.items.filter(i => i).length}</strong></span>
     </div> <!-- summary -->
 </a> <!-- inner -->
 <div id="cartPreview" class="cart-preview">
     <table>
         <tbody>
-            <Item />
+            {#each $cartData.items as item}
+                    <Item item={item} />
+            {/each}
         </tbody>
     <tfoot>
         <tr>

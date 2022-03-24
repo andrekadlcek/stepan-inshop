@@ -1,12 +1,12 @@
 <script type="ts">
 
 import { completeData, errorMessage, openError, recalculateCart } from '../../stores/cart-store'
-console.log("openError", $openError);
+// console.log("openError", $openError);
 
 </script>
 
 {#if $openError}
-     <div class="modal fade show" id="add2cartmodal">
+     <div class="modal fade show" id="add2cartmodal" on:click="{() => openError.set(false)}">
         <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
