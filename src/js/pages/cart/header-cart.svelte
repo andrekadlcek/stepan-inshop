@@ -1,7 +1,7 @@
 <script type="ts">
 
 import Item from '../cart/header-cart-item.svelte'
-import { completeData, cartData, cartStrings } from "../../stores/cart-store";
+import { cartData, cartStrings } from "../../stores/cart-store";
 
 </script>
 
@@ -12,7 +12,7 @@ import { completeData, cartData, cartStrings } from "../../stores/cart-store";
     <div class="summary">
         <span class="monitor">
             <strong>{$cartStrings.Cart_Title}</strong>
-            <span id="headerCartCount">{$cartData.items.filter(i => i).length}</span> kusů
+            <span id="headerCartCount">{$cartData.items.filter(i => i).length}</span> položek
             <span id="headerCartPrice" class="price">{@html $cartData.Cart_TotalPrice.price.PriceWithVat}</span>
         </span>
         <span class="device"><strong>{$cartData.items.filter(i => i).length}</strong></span>

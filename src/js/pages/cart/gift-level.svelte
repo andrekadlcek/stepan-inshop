@@ -1,7 +1,7 @@
 <script type="ts">
-import { CartGiftContentProps, CartGiftsLevelsProps } from "./types";
+import { CartGiftsLevelsProps } from "./types";
 import GiftItem from './cart-gift-item.svelte'
-import { cartGifts, cartStrings } from "../../stores/cart-store";
+import { cartStrings } from "../../stores/cart-store";
 export let giftLevel : CartGiftsLevelsProps;
 
 </script>

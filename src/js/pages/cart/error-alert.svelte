@@ -1,25 +1,23 @@
 <script type="ts">
 
-import { completeData, errorMessage, openError, recalculateCart } from '../../stores/cart-store'
+import { errorMessage, openError } from '../../stores/cart-store'
 // console.log("openError", $openError);
+export let headline;
 
 </script>
 
-{#if $openError}
-     <div class="modal fade show" id="add2cartmodal" on:click="{() => openError.set(false)}">
-        <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h3 class="modal-title" style="">{$errorMessage}</h3>
-            <button on:click="{() => openError.set(false)}" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <div>X</div>
-            </button>
-            </div>
-        </div>
+<div class="modal fade show" id="add2cartmodal" on:click="{() => openError.set(false)}">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h3 class="modal-title" style="">{headline}</h3>
+        <button on:click="{() => openError.set(false)}" type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <div>X</div>
+        </button>
         </div>
     </div>
-{/if}
-
+    </div>
+</div>
 
 
 <style>

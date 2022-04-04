@@ -1,6 +1,6 @@
 <script type="ts">
 import CartItem from './cart-item.svelte'
-import { completeData, cartData, cartGifts, cartStrings, clearCart, loadingCart } from "../../stores/cart-store";
+import { cartData, cartGifts, cartStrings, clearCart, loadingCart, openError, errorMessage } from "../../stores/cart-store";
 import GiftLevel from './gift-level.svelte'
 import ErrorAlert from './error-alert.svelte'
 
@@ -113,7 +113,9 @@ const toggleModal = () => {
     <input type="hidden" name="__EVENTARGUMENT" value="Action=RecalculateCart">
     <input type="hidden" name="action" value="RecalculateCart">
 </form>
-     <ErrorAlert />
+{#if $openError}
+    <ErrorAlert headline={$errorMessage} />
+{/if}
         {#if $cartGifts && giftsEnabled}
              <div id="OrderGift">
                     {#if $cartGifts.configs.titleenabled}

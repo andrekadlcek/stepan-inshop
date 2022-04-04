@@ -20,7 +20,9 @@ const erase = (e) => {
     <td class="product-view">
         <ul class="table-cells">
             <li class="photo">
-                <img src="{item.photo}" alt="{item.name}" />
+                <a href="{item.url}" title="{item.name}">
+                    <img src="{item.photo}" alt="{item.name}" />
+                </a>
             </li>
             <li class="name">
                 <a href="{item.url}" title="{item.name}">{item.name}</a>
@@ -31,7 +33,6 @@ const erase = (e) => {
                      {/each}
                 </ul>
                 {/if}
-            
                
             </li>
         </ul>

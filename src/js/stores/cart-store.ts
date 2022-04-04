@@ -19,7 +19,6 @@ const setCartLoading = (data: boolean) => {
 const getCompleteCartData = async () => {
     const res = await getCartAction()
     completeData.set(res)
-    console.log(res);
 }
 getCompleteCartData()
 
@@ -30,6 +29,8 @@ const getCartData = async () => {
     if (res.result && !res.data.cartisempty) {
         // setter pro vlozeni dat do cartData 
         cartData.set(res.data.Cart)
+        console.log(res);
+        
     }    
     setCartLoading(false)
 }

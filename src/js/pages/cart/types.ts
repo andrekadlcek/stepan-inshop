@@ -8,6 +8,7 @@ export interface CartItemProps {
     IDCartItem: number;
     IDProduct: number;
     IsConfigurableAsembly: boolean;
+    PieceAmount: number;
     PriceForRequiredAmount: string;
     PriceWithVatForRequiredAmount: string;
     count: number;
