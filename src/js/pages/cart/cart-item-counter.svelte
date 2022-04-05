@@ -36,7 +36,7 @@ useEffect(() => {
         if(count < item.PieceAmount){
             count = item.PieceAmount
             openError.set(true)
-            errorMessage.set(`Min ${item.PieceAmount}`)
+            errorMessage.set(`Minimální množství pro objednání tohoto produktu je ${item.PieceAmount}`)
         }
 
         clearTimeout(timer);
